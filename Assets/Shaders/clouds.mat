@@ -40,12 +40,18 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Noise_Scale: 0.009
-    - _Noise_Speed: 12
+    - _Noise_Edge1: 2
+    - _Noise_Edge2: 0
+    - _Noise_Scale: 0.09
+    - _Noise_Speed: 0
+    - _Power: 1.02
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Rotate_Projection: {r: 1, g: 0, b: 0, a: 10}
+    - _Color_Peak: {r: 1, g: 1, b: 1, a: 0}
+    - _Color_Valley: {r: 0, g: 0, b: 0, a: 0}
+    - _Noise_Remap: {r: 0, g: 1, b: -1, a: 1}
+    - _Rotate_Projection: {r: 1, g: 1, b: 0, a: 90}
   m_BuildTextureStacks: []
 --- !u!114 &2392558749897686313
 MonoBehaviour:
