@@ -45,12 +45,12 @@ Material:
     - _Base_Strength: 1.75
     - _Curvature_Radius: -200
     - _Emission_Strength: 0.001
-    - _Fade_Depth: 50
+    - _Fade_Depth: 20
     - _Fresnel_Opacity: 0.1
     - _Fresnel_Power: 10
     - _Noise_Edge1: -2.6
     - _Noise_Edge2: 3
-    - _Noise_Height: 30
+    - _Noise_Height: 35
     - _Noise_Scale: 0.02
     - _Noise_Speed: 5
     - _Power: 1
