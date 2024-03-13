@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
+
+    //some code credit to Kevin
+
     public float speed = 5.0f;
     public float sensitivity = 2.0f;
     private float moveFB, moveLR;
