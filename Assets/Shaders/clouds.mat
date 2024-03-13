@@ -44,7 +44,7 @@ Material:
     - _Base_Speed: 5
     - _Base_Strength: 1.75
     - _Curvature_Radius: -200
-    - _Emission_Strength: 0.001
+    - _Emission_Strength: 0.01
     - _Fade_Depth: 20
     - _Fresnel_Opacity: 0.1
     - _Fresnel_Power: 10
@@ -58,7 +58,7 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _Color_Peak: {r: 1, g: 1, b: 1, a: 0}
-    - _Color_Valley: {r: 0.79607844, g: 0.8490566, b: 0.8490566, a: 0}
+    - _Color_Valley: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0}
     - _Noise_Remap: {r: -0.24, g: 0.95, b: -1.6, a: 0.61}
     - _Rotate_Projection: {r: 1, g: 1, b: 0, a: 90}
   m_BuildTextureStacks: []
