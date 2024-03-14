@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Swimmer : MonoBehaviour
@@ -16,13 +17,16 @@ public class Swimmer : MonoBehaviour
 	
 	private Rigidbody rb;
 	
-	public int oxyCount = 100;
 	public TMP_Text oxyDisplay;
+	
+	private Coroutine breathe;
 	
     // Start is called before the first frame update
     void Start()
     {
-	rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
+		
+		breathe = StartCoroutine(breathe_time());
     }
 
     // Update is called once per frame
@@ -40,8 +44,6 @@ public class Swimmer : MonoBehaviour
 		*/
 		
 		swim(_verticalSwim, _sideSwim, _swimForward, _roll);
-		
-		Invoke("breathe", 1);
     }
 	
 	private void swim(float verticalSwimPower, float sideSwimPower, float swimForwardPower, float rollPower)
@@ -51,10 +53,24 @@ public class Swimmer : MonoBehaviour
 		rb.AddRelativeTorque(-0.05f * rollPower, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);
 	}
 
-	private void breathe()
+	IEnumerator breathe_time()
 	{
-		oxyCount -= 1;
-		oxyDisplay.SetText(oxyCount.ToString());
+		for (int i = GlobalVars.maxOxyCount; i >= 0; i--)
+		{
+			if(i == 0)
+			{
+				SceneManager.LoadScene("2D submarine");
+			}
+			
+			GlobalVars.oxyCount = i;
+			
+			
+			oxyDisplay.SetText(GlobalVars.oxyCount.ToString());
+			
+			
+			yield return new WaitForSeconds(1);
+		}
+		
 	}
 	
 }
