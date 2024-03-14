@@ -41,7 +41,7 @@ public class Swimmer : MonoBehaviour
 		
 		swim(_verticalSwim, _sideSwim, _swimForward, _roll);
 		
-		//Invoke("breathe", 1);
+		Invoke("breathe", 1);
     }
 	
 	private void swim(float verticalSwimPower, float sideSwimPower, float swimForwardPower, float rollPower)
