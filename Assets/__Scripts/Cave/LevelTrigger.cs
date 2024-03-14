@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelTrigger : MonoBehaviour
 {
@@ -21,6 +22,6 @@ public class LevelTrigger : MonoBehaviour
 	
 	private void OnTriggerEnter(Collider swimmer)
 	{
-		Debug.Log("Should load to the last scene.");
+		SceneManager.LoadScene("2D submarine");
 	}
 }
