@@ -44,11 +44,11 @@ Material:
     - _Base_Speed: 10
     - _Base_Strength: 1.75
     - _Curvature_Radius: -200
-    - _Emission_Strength: 1
+    - _Emission_Strength: 0.5
     - _Fade_Depth: 20
     - _Fresnel_Opacity: 0.1
     - _Fresnel_Power: 10
-    - _Noise_Edge1: -2.6
+    - _Noise_Edge1: -3
     - _Noise_Edge2: 3
     - _Noise_Height: 28
     - _Noise_Scale: 0.02
