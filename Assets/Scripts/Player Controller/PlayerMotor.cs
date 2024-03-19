@@ -5,11 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
+/*Artemis's Version*/
 public class PlayerMotor : MonoBehaviour
 {
     private CharacterController controller;
     public List<Item> inventory;
-    
+    public GameObject currentlyHeldItem;
+    public Transform heldItemAnchor;
+
+
     [Header("Walk")]
     private Vector3 playerVelocity;
     [SerializeField] private float speed = 5.0f;
@@ -25,6 +29,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] GameObject interactionTarget;
     [SerializeField] GameEventTrigger withinInteractRange;
     [SerializeField] GameEventTrigger outOfInteractRange;
+    [SerializeField] GameEventTrigger updateInventoryUI;
 
     [Header("Camera/Look")]
     [SerializeField] private Camera cam;
@@ -129,7 +134,31 @@ public class PlayerMotor : MonoBehaviour
     {
         interactionTarget = null;
         outOfInteractRange.Raise();
-        inventory.Add(targetItem.Collect());
+        if (targetItem.item.itemName == "Gear")
+        {
+            inventory.Add(targetItem.Collect());
+            updateInventoryUI.Raise();
+        }
+        else
+        {
+            DropItem();
+            currentlyHeldItem = targetItem.transform.gameObject;
+            targetItem.Collect(heldItemAnchor);
+        }
+    }
+
+    public void DropItem()
+    {
+        if (heldItemAnchor.childCount > 0)
+        {
+
+            foreach (Transform transform in heldItemAnchor)
+            {
+                transform.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            }
+            heldItemAnchor.DetachChildren();
+            currentlyHeldItem = null;
+        }
     }
 
     // Advance and reverse time should eventually fire events, but just wiring them directly to the crank for now. 

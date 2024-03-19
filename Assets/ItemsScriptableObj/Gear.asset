@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d6e50b2ba189541b4a2ef2747e23be, type: 3}
-  m_Name: Apple
+  m_Name: Gear
   m_EditorClassIdentifier: 
-  itemName: Apple
-  itemPrefab: {fileID: 697316840801825811, guid: 5e33e77848ac9cb44bc42dca9f3dedc4,
+  itemName: Gear
+  itemPrefab: {fileID: 170777260277265240, guid: ea5fbd057ecaaf34dbf84339f5e2c255,
     type: 3}
-  itemIcon: {fileID: 21300000, guid: 7dbe318733a2bbe4b9e175004c3b296d, type: 3}
+  itemIcon: {fileID: 21300000, guid: 84c53ab68bf68724e93ec430726b82b4, type: 3}

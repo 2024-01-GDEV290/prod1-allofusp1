@@ -9,13 +9,14 @@ public class Actor : MonoBehaviour
     [Header("Set in Inspector")]
     [SerializeField] ScheduleEvent[] schedule;
     [SerializeField] float actorMoveSpd = 2f;
+    public string displayName;
     //[SerializeField] Crank crank;
 
     [TextArea]
-    [SerializeField] string defaultDialogue;
-    [SerializeField] List<Item> itemsNoticed;
-    [SerializeField] List<string> itemReactions;
-    Dictionary<Item, string> reactionTable;
+    [SerializeField] protected string defaultDialogue;
+    [SerializeField] Item desiredItem;
+    [TextArea][SerializeField] string satisfiedDialogue;
+    [SerializeField] GameEventTrigger openGateTrigger;
 
     [Header("Set Dynamically")]
     [SerializeField] List<Item> inventory;
@@ -25,21 +26,8 @@ public class Actor : MonoBehaviour
 
     private void Awake()
     {
-        reactionTable = new Dictionary<Item, string>();
+        if (displayName == null) displayName = gameObject.name;
         player = GameObject.Find("Player").GetComponent<PlayerMotor>();
-        if (itemsNoticed.Count > 0 )
-        {
-            for (int i = 0; i < itemsNoticed.Count; i += 1)
-            {
-                string reaction = "Generic item reaction dialogue!";
-                if (itemReactions.Count >= i + 1)
-                {
-                    reaction = itemReactions[i];
-                }
-
-                reactionTable.Add(itemsNoticed[i], reaction);
-            }
-        }
     }
 
     private void Update()
@@ -52,28 +40,26 @@ public class Actor : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        transform.LookAt(Camera.main.transform.position);
+    }
+
     public void ReciteLines()
     {
-       foreach (Item item in player.inventory)
+        if (desiredItem && player.currentlyHeldItem && player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem)
         {
-            if (itemsNoticed.Contains(item))
-            {
-                Debug.Log(reactionTable[item]);
-                TakeItem(item);
-                return;
-            }
+            Debug.Log(satisfiedDialogue);
+            TakeItem();
+            openGateTrigger.Raise();
+            return;
         }
         Debug.Log(defaultDialogue);
     }
 
-    void TakeItem(Item item)
+    void TakeItem()
     {
-        if (player.inventory.Contains(item))
-        {
-            inventory.Add(item);
-            player.inventory.Remove(item);
-        }
-        
+        player.DropItem();
     }
 
     public void MoveToScheduledLocation()
