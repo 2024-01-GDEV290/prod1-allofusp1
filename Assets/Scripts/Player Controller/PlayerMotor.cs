@@ -98,7 +98,7 @@ public class PlayerMotor : MonoBehaviour
     {
         float mouseX = input.x;
         float mouseY = input.y;
-
+        
         // calculate camera rotation for looking up and down
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
         xRotation = Mathf.Clamp(xRotation, -80, 80f);
