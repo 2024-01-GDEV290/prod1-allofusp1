@@ -12,8 +12,6 @@ public class Actor : MonoBehaviour
     public string displayName;
     //[SerializeField] Crank crank;
     [SerializeField] GameEventTrigger behaviorTrigger;
-    [TextArea]
-    [SerializeField] public string defaultDialogue;
 
 
     [Header("Set Dynamically")]
@@ -43,8 +41,7 @@ public class Actor : MonoBehaviour
 
     public void ReciteLines()
     {
-        behaviorTrigger.Raise();
-        Debug.Log(defaultDialogue);
+        if(behaviorTrigger) behaviorTrigger.Raise();
     }
 
     public void MoveToScheduledLocation()
