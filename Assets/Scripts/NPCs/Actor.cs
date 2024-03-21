@@ -11,23 +11,19 @@ public class Actor : MonoBehaviour
     [SerializeField] float actorMoveSpd = 2f;
     public string displayName;
     //[SerializeField] Crank crank;
-
+    [SerializeField] GameEventTrigger behaviorTrigger;
     [TextArea]
-    [SerializeField] protected string defaultDialogue;
-    [SerializeField] Item desiredItem;
-    [TextArea][SerializeField] string satisfiedDialogue;
-    [SerializeField] GameEventTrigger openGateTrigger;
+    [SerializeField] public string defaultDialogue;
+
 
     [Header("Set Dynamically")]
-    [SerializeField] List<Item> inventory;
-    [SerializeField] PlayerMotor player;
     [SerializeField] ScheduleEvent currentScheduleEvent;
     [SerializeField] GameObject wayPoint;
 
     private void Awake()
     {
         if (displayName == null) displayName = gameObject.name;
-        player = GameObject.Find("Player").GetComponent<PlayerMotor>();
+
     }
 
     private void Update()
@@ -47,19 +43,8 @@ public class Actor : MonoBehaviour
 
     public void ReciteLines()
     {
-        if (desiredItem && player.currentlyHeldItem && player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem)
-        {
-            Debug.Log(satisfiedDialogue);
-            TakeItem();
-            openGateTrigger.Raise();
-            return;
-        }
+        behaviorTrigger.Raise();
         Debug.Log(defaultDialogue);
-    }
-
-    void TakeItem()
-    {
-        player.DropItem();
     }
 
     public void MoveToScheduledLocation()
