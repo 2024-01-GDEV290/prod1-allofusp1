@@ -19,7 +19,12 @@ public class Swimmer : MonoBehaviour
 	
 	public TMP_Text oxyDisplay;
 	
+	// The 'breathe' coroutine is used to track the player's oxygen level underwater. They have 100 seconds without oxygen.
 	private Coroutine breathe;
+	
+	
+	// Camera is not a child of the swimmer, but is in a fixed position relative to swimmer
+	public GameObject camera;
 	
     // Start is called before the first frame update
     void Start()
@@ -44,14 +49,26 @@ public class Swimmer : MonoBehaviour
 		*/
 		
 		swim(_verticalSwim, _sideSwim, _swimForward, _roll);
+		
+		cameraUpdate(camera);
     }
 	
 	private void swim(float verticalSwimPower, float sideSwimPower, float swimForwardPower, float rollPower)
 	{
 		rb.AddRelativeForce(swimForwardPower * Time.deltaTime * 10, 0, 0);
 		
-		rb.AddRelativeTorque(-0.05f * rollPower, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);
+		rb.AddRelativeTorque(-20 * rollPower * Time.deltaTime, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);
 	}
+
+	private void cameraUpdate(GameObject camera)
+	{
+		Vector3 currentPosition = transform.position;
+		camera.transform.position = new Vector3(currentPosition.x - 3, currentPosition.y, currentPosition.z);
+		
+		camera.transform.rotation = transform.rotation;
+		camera.transform.Rotate(0, 90, 0);
+	}
+
 
 	IEnumerator breathe_time()
 	{
@@ -63,10 +80,7 @@ public class Swimmer : MonoBehaviour
 			}
 			
 			GlobalVars.oxyCount = i;
-			
-			
 			oxyDisplay.SetText(GlobalVars.oxyCount.ToString());
-			
 			
 			yield return new WaitForSeconds(1);
 		}
