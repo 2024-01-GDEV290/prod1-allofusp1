@@ -13,7 +13,7 @@ public class FirstPersonController : MonoBehaviour
     private float moveFB, moveLR;
     private float rotX, rotY;
     public float sprintSpeedMultiplier = 2.0f; // Multiplier for speed when sprinting
-    public float jumpForce = 8.0f;
+    public float jumpForce = 1.0f;
     private bool isGrounded;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -69,6 +69,6 @@ public class FirstPersonController : MonoBehaviour
         
 
         // Applying movement separately to respect Rigidbody's physics
-        rb.MovePosition(rb.position + movement * Time.deltaTime);
+        //rb.MovePosition(rb.position + movement * Time.deltaTime);
     }
 }
