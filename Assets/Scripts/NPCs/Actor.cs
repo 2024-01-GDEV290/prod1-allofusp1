@@ -12,7 +12,7 @@ public class Actor : MonoBehaviour
     public string displayName;
     //[SerializeField] Crank crank;
     [SerializeField] GameEventTrigger behaviorTrigger;
-
+    [SerializeField] GameObject characterBody;
 
     [Header("Set Dynamically")]
     [SerializeField] ScheduleEvent currentScheduleEvent;
@@ -36,7 +36,8 @@ public class Actor : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.LookAt(Camera.main.transform.position);
+        characterBody.transform.LookAt(Camera.main.transform.position);
+        Debug.DrawRay(transform.position, transform.forward * 4, Color.red);
     }
 
     public void ReciteLines()
