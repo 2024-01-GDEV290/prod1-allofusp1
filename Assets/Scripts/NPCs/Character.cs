@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum CharacterState{
+    idle,
+    walking
+}
 public abstract class Character : MonoBehaviour
 {
     [TextArea]
@@ -9,11 +12,25 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField] protected PlayerMotor player;
     [SerializeField] protected Actor actor;
+    [SerializeField] protected NPCSpriteManager spriteManager;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<PlayerMotor>();
-        actor = GetComponent<Actor>();
+        actor = transform.parent.gameObject.GetComponent<Actor>();
+        spriteRenderer = GetComponent<SpriteRenderer>();   
+    }
+
+    private void LateUpdate()
+    {
+        if (actor.relativePlayerLocation == RelativePlayerLocation.Back && spriteRenderer.sprite != spriteManager.backIdle)
+        {
+            spriteRenderer.sprite = spriteManager.backIdle;
+        }else if (actor.relativePlayerLocation == RelativePlayerLocation.Front && spriteRenderer.sprite != spriteManager.frontIdle)
+        {
+            spriteRenderer.sprite = spriteManager.frontIdle;
+        }
     }
     public abstract void CharacterBehavior();
 

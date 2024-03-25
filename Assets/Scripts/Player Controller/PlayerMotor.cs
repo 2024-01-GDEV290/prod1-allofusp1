@@ -120,7 +120,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (!interactionTarget) return;
         ItemAvatar targetItem = interactionTarget.GetComponent<ItemAvatar>();
-        Actor targetActor = interactionTarget.GetComponent<Actor>();
+        Actor targetActor = interactionTarget.transform.parent.GetComponent<Actor>();
         if (targetItem)
         {
             CollectItem(targetItem);

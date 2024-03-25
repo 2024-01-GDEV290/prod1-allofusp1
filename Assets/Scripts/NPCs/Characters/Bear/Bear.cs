@@ -20,6 +20,10 @@ public class Bear : Character
             openGateTrigger.Raise();
             return;
         }
+        else
+        {
+            Debug.Log(defaultDialogue); 
+        }
     }
 
     void TakeItem()
