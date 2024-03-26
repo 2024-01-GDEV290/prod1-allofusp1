@@ -120,7 +120,9 @@ public class PlayerMotor : MonoBehaviour
     {
         if (!interactionTarget) return;
         ItemAvatar targetItem = interactionTarget.GetComponent<ItemAvatar>();
-        Actor targetActor = interactionTarget.transform.parent.GetComponent<Actor>();
+        Actor targetActor = interactionTarget.transform.parent != null ? interactionTarget.transform.parent.GetComponent<Actor>() : null;
+        
+
         if (targetItem)
         {
             CollectItem(targetItem);
@@ -134,7 +136,7 @@ public class PlayerMotor : MonoBehaviour
     {
         interactionTarget = null;
         outOfInteractRange.Raise();
-        if (targetItem.item.itemName == "Gear")
+        if (targetItem.item.held == false)
         {
             inventory.Add(targetItem.Collect());
             updateInventoryUI.Raise();

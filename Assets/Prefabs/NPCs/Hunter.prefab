@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6814056612564205422
+--- !u!1 &6204721975481465807
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2326500003374083466}
-  - component: {fileID: 4700007244384925079}
-  - component: {fileID: 3087850887911061259}
-  - component: {fileID: 961293306829581898}
+  - component: {fileID: 7523054991660939245}
+  - component: {fileID: 5494178395688439648}
+  - component: {fileID: 4181435356866449559}
+  - component: {fileID: 9033009065859302599}
+  - component: {fileID: 1481699734093591367}
   m_Layer: 6
-  m_Name: Hunter
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2326500003374083466
+--- !u!4 &7523054991660939245
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814056612564205422}
+  m_GameObject: {fileID: 6204721975481465807}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.06, y: 1.6, z: 25.23}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5179775005938097069}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4700007244384925079
+--- !u!136 &5494178395688439648
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814056612564205422}
+  m_GameObject: {fileID: 6204721975481465807}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -57,37 +58,13 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3087850887911061259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814056612564205422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1faf5a1c768868645822c47142bd345e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  schedule: []
-  crank: {fileID: 0}
-  displayName: Hunter
-  defaultDialogue: 'Me, hunting bears? No way! I''m hunting...uh...dire rabbits.
-    I hear she likes apples though. '
-  desiredItem: {fileID: 0}
-  satisfiedDialogue: 
-  openGateTrigger: {fileID: 11400000, guid: a28acd14b09461643958ebecb1aa529b, type: 2}
-  inventory: []
-  player: {fileID: 0}
-  currentScheduleEvent: {fileID: 0}
-  wayPoint: {fileID: 0}
---- !u!212 &961293306829581898
+--- !u!212 &4181435356866449559
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814056612564205422}
+  m_GameObject: {fileID: 6204721975481465807}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -133,3 +110,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9033009065859302599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e23f8b39410835468e918786ff6896c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue: I ain't fightin' her, kid. But I hear she likes apples.
+  player: {fileID: 0}
+  actor: {fileID: 0}
+  spriteManager: {fileID: 11400000, guid: a8408fbf8d181114587a6896bfd31702, type: 2}
+  spriteRenderer: {fileID: 0}
+--- !u!114 &1481699734093591367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: fffc0c00389e4d44395b0630cfb0f1f2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9033009065859302599}
+        m_TargetAssemblyTypeName: Hunter, Assembly-CSharp
+        m_MethodName: CharacterBehavior
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &8100203392684350238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5179775005938097069}
+  - component: {fileID: 5218198306601905384}
+  m_Layer: 6
+  m_Name: Hunter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5179775005938097069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100203392684350238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 3.3915958, y: 1.68, z: 10.713209}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7523054991660939245}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &5218198306601905384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100203392684350238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1faf5a1c768868645822c47142bd345e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  schedule: []
+  actorMoveSpd: 2
+  displayName: Hunter
+  behaviorTrigger: {fileID: 11400000, guid: fffc0c00389e4d44395b0630cfb0f1f2, type: 2}
+  characterBody: {fileID: 6204721975481465807}
+  currentScheduleEvent: {fileID: 0}
+  wayPoint: {fileID: 0}
+  relativePlayerLocation: 0
+  playerAngleFromForward: 0
+  playerAngleFromRight: 0
