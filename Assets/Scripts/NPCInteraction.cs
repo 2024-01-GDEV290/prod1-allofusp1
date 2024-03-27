@@ -4,12 +4,12 @@ public class NPCInteraction : MonoBehaviour
 {
     public GameObject dialogueTrigger; // Assign your DialogueManager GameObject here in the Inspector
     public float interactionRange = 3f; // Interaction range, adjust as needed
-    //public LayerMask npcLayer; // Assign a layer for the player to filter the raycast
-
+    public FirstPersonController fpsController;
 
     void Start()
     {
         dialogueTrigger.SetActive(false);
+        
     }
 
     void Update()
@@ -27,11 +27,10 @@ public class NPCInteraction : MonoBehaviour
             {
                 Debug.Log("Hit: " + hit.collider.name);
                 // Optionally, check for a key press to initiate dialogue
-                if (Input.GetKeyDown(KeyCode.E)) // Assuming 'E' is the interact key
+                if (Input.GetKeyDown(KeyCode.E) ) // Assuming 'E' is the interact key
                 {
                     dialogueTrigger.SetActive(true); // Activate the dialogue, assuming the dialogue manager handles activation appropriately
-                    // Alternatively, call a method on the DialogueManager to start the dialogue
-                    // dialogueTrigger.GetComponent<DialogueManager>().StartDialogue();
+                    fpsController.ToggleMovement(false);
                 }
             }
         }
@@ -39,5 +38,8 @@ public class NPCInteraction : MonoBehaviour
         // Optionally, draw the ray in the Scene view for debugging
         Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
     }
+
+    
+
 }
 

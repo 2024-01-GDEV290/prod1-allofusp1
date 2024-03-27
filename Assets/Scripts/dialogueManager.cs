@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public string[] sentences; // Array of sentences you want to cycle through
     private int index = 0;
     public float typingSpeed = 0.02f; // Speed of typing
+    public FirstPersonController fpsController;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class DialogueManager : MonoBehaviour
         // Check if the left mouse button was clicked
         if (Input.GetKeyDown(KeyCode.E)) 
         {
+            
             if (dialogueText.text == sentences[index]) // Check if typing has finished
             {
                 NextSentence();
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    
 
     IEnumerator TypeSentence()
     {
@@ -58,7 +61,8 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.text = ""; // Clear the text for the last time
                 index = 0; // Reset index to 0 or according to your needs
                            // Optionally hide the dialogue UI here or trigger other actions
-                            gameObject.SetActive(false); // Example to hide the dialogue object
+                gameObject.SetActive(false); // Example to hide the dialogue object
+                fpsController.ToggleMovement(true);
             }
             else
             {

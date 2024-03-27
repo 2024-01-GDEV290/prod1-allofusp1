@@ -21,54 +21,56 @@ public class FirstPersonController : MonoBehaviour
 
     public GameObject camera;
     private Rigidbody rb;
+
+    public bool canMove = true;
     
     void Start()
     {
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
     }
-        
-        
-
+      
     void Update()
     {
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (canMove)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
+
+            moveFB = Input.GetAxis("Vertical") * speed;
+            moveLR = Input.GetAxis("Horizontal") * speed;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+
+                moveFB *= sprintSpeedMultiplier;
+                moveLR *= sprintSpeedMultiplier;
+            }
+
+            rotX = Input.GetAxis("Mouse X") * sensitivity;
+            rotY -= Input.GetAxis("Mouse Y") * sensitivity;
+            rotY = Mathf.Clamp(rotY, -89f, 89f);
+
+            Vector3 movement = new Vector3(moveLR, 0, moveFB);
+            transform.Rotate(0, rotX, 0);
+            camera.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
+
+            movement = transform.rotation * movement;
+            transform.position += movement * Time.deltaTime;
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // Checks if you're on the ground
+
+            moveFB = Input.GetAxis("Vertical") * speed;
+            moveLR = Input.GetAxis("Horizontal") * speed;
         }
 
-        moveFB = Input.GetAxis("Vertical") * speed;
-        moveLR = Input.GetAxis("Horizontal") * speed;
+    }
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-
-            moveFB *= sprintSpeedMultiplier;
-            moveLR *= sprintSpeedMultiplier;
-        }
-
-        rotX = Input.GetAxis("Mouse X") * sensitivity;
-        rotY -= Input.GetAxis("Mouse Y") * sensitivity;
-        rotY = Mathf.Clamp(rotY, -89f, 89f);
-
-        Vector3 movement = new Vector3(moveLR, 0, moveFB);
-        transform.Rotate(0, rotX, 0);
-        camera.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
-
-        movement = transform.rotation * movement;
-        transform.position += movement * Time.deltaTime;
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // Checks if you're on the ground
-
-        moveFB = Input.GetAxis("Vertical") * speed;
-        moveLR = Input.GetAxis("Horizontal") * speed;
-
-        
-
-        
-
-        // Applying movement separately to respect Rigidbody's physics
-        //rb.MovePosition(rb.position + movement * Time.deltaTime);
+    public void ToggleMovement(bool enable)
+    {
+        canMove = enable;
     }
 }

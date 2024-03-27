@@ -1027,6 +1027,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 136881268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685494865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9171322805743101807, guid: 02176b0838d032c4cb2e5df2440da22a,
+    type: 3}
+  m_PrefabInstance: {fileID: 733232029995068264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dbdf24a1bd0c00489e6bff82d64c9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &691186602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1496,6 +1508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 1762488634}
   interactionRange: 5
+  fpsController: {fileID: 685494865}
 --- !u!1 &1243155527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,9 +7035,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1950303796}
   sentences:
-  - greetings.  my name is austin
-  - you seem nice.
+  - Hello...
+  - We don't get many visitors in this realm.
+  - 'We are lost souls, drifting in eternity. '
+  - With nothing but our memories to keep us company...
   typingSpeed: 0.02
+  fpsController: {fileID: 685494865}
 --- !u!1 &1764955982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c9075def0ccb6f946868c4973e60fcab,
