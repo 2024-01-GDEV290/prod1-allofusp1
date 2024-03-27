@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using System.Reflection;
 
 /*Artemis's Version*/
 public class PlayerMotor : MonoBehaviour
@@ -121,14 +122,16 @@ public class PlayerMotor : MonoBehaviour
         if (!interactionTarget) return;
         ItemAvatar targetItem = interactionTarget.GetComponent<ItemAvatar>();
         Actor targetActor = interactionTarget.transform.parent != null ? interactionTarget.transform.parent.GetComponent<Actor>() : null;
-        
-
+        Prop targetProp = interactionTarget.GetComponent<Prop>();
         if (targetItem)
         {
             CollectItem(targetItem);
         }
         else if (targetActor) {
             targetActor.ReciteLines();
+        } else if (targetProp)
+        {
+            targetProp.Behavior();
         }
     }
 

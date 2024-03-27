@@ -43,27 +43,7 @@ public class Actor : MonoBehaviour
 
     private void LateUpdate()
     {
-        playerAngleFromForward = Vector3.Angle(Camera.main.transform.position -transform.position, transform.forward);
-        playerAngleFromRight = Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
-        if (playerAngleFromForward > 90)
-        {
-            relativePlayerLocation = RelativePlayerLocation.Back;
-        }
-        else {
-            relativePlayerLocation = RelativePlayerLocation.Front;
-        }
-
-        if (playerAngleFromRight > 90)
-        {
-            characterBody.transform.rotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
-        }
-        else
-        {
-            characterBody.transform.rotation = Quaternion.Euler(0, playerAngleFromForward, 0);
-        }
-
-
-        Debug.DrawRay(transform.position, transform.forward * 4, Color.red);
+        OrientSprite();
     }
 
     public void ReciteLines()
@@ -81,19 +61,29 @@ public class Actor : MonoBehaviour
         }
     }
 
-/*    void OrientSprite()
+    void OrientSprite()
     {
-        Vector3 diff = Camera.main.transform.position - transform.position;
-        if (Vector3.Angle(diff, transform.position) > 90)
+        playerAngleFromForward = Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
+        playerAngleFromRight = Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
+        if (playerAngleFromForward > 90)
         {
-            // Orienting the decal to the correct direction so the particle system is facing towards the side the player is on. 
-            decal.transform.localEulerAngles = new Vector3(-90, 0, 0);
+            relativePlayerLocation = RelativePlayerLocation.Back;
         }
         else
         {
-            decal.transform.localEulerAngles = new Vector3(90, 0, 0);
+            relativePlayerLocation = RelativePlayerLocation.Front;
         }
-    }*/
+
+        if (playerAngleFromRight > 90)
+        {
+            characterBody.transform.localRotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
+        }
+        else
+        {
+            characterBody.transform.localRotation = Quaternion.Euler(0, playerAngleFromForward, 0);
+        }
+        Debug.DrawRay(transform.position, transform.forward * 4, Color.red);
+    }
 
     GameObject GetWayPoint(string wayPointName)
     {

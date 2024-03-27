@@ -13,21 +13,12 @@ public class Bear : Character
 
     public override void CharacterBehavior()
     {
-        if (desiredItem && player.currentlyHeldItem && player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem)
-        {
-            Debug.Log(satisfiedDialogue);
-            TakeItem();
-            openGateTrigger.Raise();
-            return;
-        }
-        else
-        {
             Debug.Log(defaultDialogue); 
-        }
     }
 
-    void TakeItem()
+    public void LeaveCave()
     {
-        player.DropItem();
+        Debug.Log(satisfiedDialogue);
+        openGateTrigger.Raise();
     }
 }
