@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369587519066673915}
   - component: {fileID: 3478985580690045298}
+  - component: {fileID: 5079921358188939133}
   m_Layer: 6
   m_Name: Bear
   m_TagString: Untagged
@@ -55,6 +56,28 @@ MonoBehaviour:
   relativePlayerLocation: 0
   playerAngleFromForward: 0
   playerAngleFromRight: 0
+--- !u!195 &5079921358188939133
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762973397406866860}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9222312825732530144
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +209,7 @@ MonoBehaviour:
   desiredItem: {fileID: 11400000, guid: 8a2b0759b5e9b3d4e9e744d7a9dbbe68, type: 2}
   satisfiedDialogue: Rwaaaargh. ^_^
   openGateTrigger: {fileID: 11400000, guid: 58b4f0433925c3d44bf9f1ba426e01a7, type: 2}
+  stumpWaypoint: {fileID: 0}
 --- !u!114 &8004319431673622927
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEditor.PlayerSettings;
 
 public enum RelativePlayerLocation
@@ -25,8 +26,10 @@ public class Actor : MonoBehaviour
     [SerializeField] public RelativePlayerLocation relativePlayerLocation;
     [SerializeField] float playerAngleFromForward = 0;
     [SerializeField] float playerAngleFromRight = 0;
+    [SerializeField] NavMeshAgent agent;
     private void Awake()
     {
+        agent = GetComponent<NavMeshAgent>();
         if (displayName == null) displayName = gameObject.name;
 
     }
@@ -50,6 +53,11 @@ public class Actor : MonoBehaviour
     {
         Debug.Log("Reciting Lines");
         if(behaviorTrigger) behaviorTrigger.Raise();
+    }
+
+    public void MoveToWaypoint(Transform wayPoint)
+    {
+        agent.destination = wayPoint.position;
     }
 
     public void MoveToScheduledLocation()

@@ -8,7 +8,7 @@ public class Bear : Character
     [SerializeField] Item desiredItem;
     [TextArea][SerializeField] string satisfiedDialogue;
     [SerializeField] GameEventTrigger openGateTrigger;
-
+    [SerializeField] GameObject stumpWaypoint;
 
 
     public override void CharacterBehavior()
@@ -19,6 +19,7 @@ public class Bear : Character
     public void LeaveCave()
     {
         Debug.Log(satisfiedDialogue);
+        actor.MoveToWaypoint(stumpWaypoint.transform);
         openGateTrigger.Raise();
     }
 }
