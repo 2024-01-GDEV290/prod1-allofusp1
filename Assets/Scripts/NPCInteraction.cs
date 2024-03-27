@@ -1,45 +1,61 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject dialogueTrigger; // Assign your DialogueManager GameObject here in the Inspector
+    public GameObject dialogueTrigger;
+    public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range, adjust as needed
     public FirstPersonController fpsController;
 
     void Start()
     {
         dialogueTrigger.SetActive(false);
-        
+        interactionText.SetActive(false);
+
     }
 
     void Update()
     {
         CheckForNPC();
+
+        if (dialogueTrigger.activeInHierarchy)
+        {
+            interactionText.SetActive(false);
+        }
     }
 
     void CheckForNPC()
     {
-        // Perform a raycast forward from the NPC's position
+        // Perform a raycast forward from the players' position
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
         {
-            if (hit.collider.CompareTag("NPC")) // Make sure your player GameObject has the "Player" tag
+            if (hit.collider.CompareTag("NPC")) 
             {
+                interactionText.SetActive(true);
                 Debug.Log("Hit: " + hit.collider.name);
-                // Optionally, check for a key press to initiate dialogue
-                if (Input.GetKeyDown(KeyCode.E) ) // Assuming 'E' is the interact key
+
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    dialogueTrigger.SetActive(true); // Activate the dialogue, assuming the dialogue manager handles activation appropriately
+
+                    dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false);
+
                 }
             }
+
+            
+
+            Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
 
-        // Optionally, draw the ray in the Scene view for debugging
-        Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
+        else
+        {
+            interactionText.SetActive(false);
+        }
+
     }
-
-    
-
 }
 

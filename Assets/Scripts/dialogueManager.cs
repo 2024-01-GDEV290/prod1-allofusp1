@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     private int index = 0;
     public float typingSpeed = 0.02f; // Speed of typing
     public FirstPersonController fpsController;
+    
 
     void Start()
     {
@@ -63,6 +64,8 @@ public class DialogueManager : MonoBehaviour
                            // Optionally hide the dialogue UI here or trigger other actions
                 gameObject.SetActive(false); // Example to hide the dialogue object
                 fpsController.ToggleMovement(true);
+                
+                
             }
             else
             {
