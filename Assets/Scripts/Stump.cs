@@ -8,7 +8,7 @@ public class Stump : Prop
     [SerializeField] GameEventTrigger successTrigger;
     public override void Behavior()
     {
-        if (requiredItem == player.currentlyHeldItem.GetComponent<ItemAvatar>().item)
+        if (player.currentlyHeldItem && requiredItem == player.currentlyHeldItem.GetComponent<ItemAvatar>().item)
         {
             float ripeness = player.currentlyHeldItem.GetComponent<AppleTime>().ripeness;
             Debug.Log(ripeness);

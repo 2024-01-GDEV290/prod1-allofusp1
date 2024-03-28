@@ -82,7 +82,7 @@ public class Actor : MonoBehaviour
             relativePlayerLocation = RelativePlayerLocation.Front;
         }
 */
-        characterBody.transform.localRotation = Quaternion.Euler(0,Camera.main.transform.eulerAngles.y - 90, 0);
+        characterBody.transform.localRotation = Quaternion.Euler(0,Camera.main.transform.eulerAngles.y, 0);
 /*        if (playerAngleFromRight >= 90)
         {
             characterBody.transform.localRotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
