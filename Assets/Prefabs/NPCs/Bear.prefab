@@ -56,6 +56,7 @@ MonoBehaviour:
   relativePlayerLocation: 0
   playerAngleFromForward: 0
   playerAngleFromRight: 0
+  agent: {fileID: 0}
 --- !u!195 &5079921358188939133
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -91,6 +92,7 @@ GameObject:
   - component: {fileID: 8163990502860153226}
   - component: {fileID: 1002621646786397270}
   - component: {fileID: 8004319431673622927}
+  - component: {fileID: 6904285415057161273}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -205,11 +207,18 @@ MonoBehaviour:
   actor: {fileID: 0}
   spriteManager: {fileID: 11400000, guid: 4e5d14b81a4e3354c9391ae826546487, type: 2}
   spriteRenderer: {fileID: 0}
+  defaultInteractSounds:
+  - {fileID: 8300000, guid: 1e042582ce79baf45a648eff70aa2d67, type: 3}
+  - {fileID: 8300000, guid: 4c71875f151862f4888fb90746017210, type: 3}
+  audioSource: {fileID: 0}
   inventory: []
   desiredItem: {fileID: 11400000, guid: 8a2b0759b5e9b3d4e9e744d7a9dbbe68, type: 2}
   satisfiedDialogue: Rwaaaargh. ^_^
   openGateTrigger: {fileID: 11400000, guid: 58b4f0433925c3d44bf9f1ba426e01a7, type: 2}
   stumpWaypoint: {fileID: 0}
+  calmInteractSounds:
+  - {fileID: 8300000, guid: 940cb819a32291042a6704c6b9b6530f, type: 3}
+  - {fileID: 8300000, guid: 02f18ae906a2f9346af0bb9dbb2971ea, type: 3}
 --- !u!114 &8004319431673622927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +247,99 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &6904285415057161273
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222312825732530144}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

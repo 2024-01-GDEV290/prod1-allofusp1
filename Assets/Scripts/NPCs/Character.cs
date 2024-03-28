@@ -14,9 +14,12 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected Actor actor;
     [SerializeField] protected NPCSpriteManager spriteManager;
     [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected AudioClip[] defaultInteractSounds;
+    [SerializeField] protected AudioSource audioSource;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.Find("Player").GetComponent<PlayerMotor>();
         actor = transform.parent.gameObject.GetComponent<Actor>();
         spriteRenderer = GetComponent<SpriteRenderer>();   

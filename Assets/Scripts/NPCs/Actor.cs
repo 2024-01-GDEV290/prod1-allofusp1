@@ -73,7 +73,7 @@ public class Actor : MonoBehaviour
     {
         playerAngleFromForward = Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
         playerAngleFromRight = Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
-        if (playerAngleFromForward > 90)
+        if (playerAngleFromForward >= 90)
         {
             relativePlayerLocation = RelativePlayerLocation.Back;
         }
@@ -82,7 +82,7 @@ public class Actor : MonoBehaviour
             relativePlayerLocation = RelativePlayerLocation.Front;
         }
 
-        if (playerAngleFromRight > 90)
+        if (playerAngleFromRight >= 90)
         {
             characterBody.transform.localRotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
         }
