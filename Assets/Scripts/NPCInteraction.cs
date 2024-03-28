@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public FirstPersonController fpsController;
+
 
     void Start()
     {
@@ -44,6 +46,16 @@ public class NPCInteraction : MonoBehaviour
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
 
+                }
+            }
+
+            if (hit.collider.CompareTag("door"))
+            {
+                interactionText.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene("treeScene");
                 }
             }
 
