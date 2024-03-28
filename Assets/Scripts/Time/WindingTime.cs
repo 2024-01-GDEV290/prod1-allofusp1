@@ -36,7 +36,7 @@ public class WindingTime : MonoBehaviour
 
     private void Awake()
     {
-        _degrees = 0;
+        _degrees = 180;
         if (S == null) { S = this; }
         //skyChange = false;
         //RenderSettings.ambientIntensity = 0;
