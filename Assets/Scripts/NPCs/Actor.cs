@@ -71,7 +71,7 @@ public class Actor : MonoBehaviour
 
     void OrientSprite()
     {
-        playerAngleFromForward = Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
+/*        playerAngleFromForward = Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
         playerAngleFromRight = Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
         if (playerAngleFromForward >= 90)
         {
@@ -81,15 +81,16 @@ public class Actor : MonoBehaviour
         {
             relativePlayerLocation = RelativePlayerLocation.Front;
         }
-
-        if (playerAngleFromRight >= 90)
+*/
+        characterBody.transform.localRotation = Quaternion.Euler(0,Camera.main.transform.eulerAngles.y - 90, 0);
+/*        if (playerAngleFromRight >= 90)
         {
             characterBody.transform.localRotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
         }
         else
         {
             characterBody.transform.localRotation = Quaternion.Euler(0, playerAngleFromForward, 0);
-        }
+        }*/
         Debug.DrawRay(transform.position, transform.forward * 4, Color.red);
     }
 
