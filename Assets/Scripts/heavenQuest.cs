@@ -24,15 +24,15 @@ public class heavenQuest : MonoBehaviour
 
     IEnumerator DisplayQuest()
     {
-        yield return new WaitForSeconds(beginTime);
+        yield return new WaitForSeconds(beginTime); // Time befor text appears
         //questText.SetActive(true);
         yield return StartCoroutine(FadeTextTo(1.0f)); // Fade in
-        yield return new WaitForSeconds(activeTime);
+        yield return new WaitForSeconds(activeTime); // Time text is on screen
         yield return StartCoroutine(FadeTextTo(0.0f)); // Fade out
         //questText.SetActive(false);
     }
 
-    IEnumerator FadeTextTo(float targetAlpha)
+    IEnumerator FadeTextTo(float targetAlpha) //Fades the alpha of the canvas group component
     {
         float alpha = questTextCanvasGroup.alpha;
 

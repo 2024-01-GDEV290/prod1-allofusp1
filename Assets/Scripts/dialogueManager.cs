@@ -4,8 +4,8 @@ using TMPro; // Updated namespace for TextMeshPro
 
 public class DialogueManager : MonoBehaviour
 {
-    public TMP_Text dialogueText; // Updated to use TMP_Text
-    public string[] sentences; // Array of sentences you want to cycle through
+    public TMP_Text dialogueText; 
+    public string[] sentences; // Array of sentences to cycle through
     private int index = 0;
     public float typingSpeed = 0.02f; // Speed of typing
     public FirstPersonController fpsController;
@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // Check if the left mouse button was clicked
+        
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             
@@ -51,19 +51,20 @@ public class DialogueManager : MonoBehaviour
         if (index < sentences.Length - 1)
         {
             index++;
-            dialogueText.text = ""; // Clear the text
+            dialogueText.text = ""; // Clear the last sentence
+
             StartCoroutine(TypeSentence());
         }
         else
         {
-            // New: Check if we're on the last sentence and it has finished typing
+            //Check if last sentence has finished typing
             if (dialogueText.text == sentences[index])
             {
-                dialogueText.text = ""; // Clear the text for the last time
-                index = 0; // Reset index to 0 or according to your needs
-                           // Optionally hide the dialogue UI here or trigger other actions
-                gameObject.SetActive(false); // Example to hide the dialogue object
-                fpsController.ToggleMovement(true);
+                dialogueText.text = ""; // Clear the text 
+                index = 0; // Reset index to 0 
+                           
+                gameObject.SetActive(false); // Hide the dialogue object
+                fpsController.ToggleMovement(true); // unlock character movement
                 
                 
             }

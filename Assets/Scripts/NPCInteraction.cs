@@ -6,7 +6,7 @@ public class NPCInteraction : MonoBehaviour
 {
     public GameObject dialogueTrigger;
     public GameObject interactionText;
-    public float interactionRange = 3f; // Interaction range, adjust as needed
+    public float interactionRange = 3f; // Interaction range
     public FirstPersonController fpsController;
 
     void Start()
@@ -30,6 +30,7 @@ public class NPCInteraction : MonoBehaviour
     {
         // Perform a raycast forward from the players' position
         RaycastHit hit;
+
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
         {
             if (hit.collider.CompareTag("NPC")) 
@@ -41,7 +42,7 @@ public class NPCInteraction : MonoBehaviour
                 {
 
                     dialogueTrigger.SetActive(true);
-                    fpsController.ToggleMovement(false);
+                    fpsController.ToggleMovement(false); //lock character movement
 
                 }
             }
