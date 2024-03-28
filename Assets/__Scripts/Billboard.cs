@@ -6,6 +6,14 @@ public class Billbord : MonoBehaviour
 {
     Camera mainCamera;
 
+    void OnEnable()
+    {
+        if (!GetComponent<Renderer>().isVisible)
+        {
+            enabled = false;
+        }
+    }
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -19,5 +27,15 @@ public class Billbord : MonoBehaviour
         newRotation.z = 0;
 
         transform.eulerAngles = newRotation;
+    }
+
+    void OnBecameVisible()
+    {
+        enabled = true;
+    }
+
+    void OnBecameInvisible()
+    {
+        enabled = false;
     }
 }
