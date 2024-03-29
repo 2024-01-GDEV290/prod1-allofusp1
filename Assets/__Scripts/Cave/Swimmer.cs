@@ -57,7 +57,7 @@ public class Swimmer : MonoBehaviour
 	{
 		rb.AddRelativeForce(swimForwardPower * Time.deltaTime * 10, 0, 0);
 		
-		rb.AddRelativeTorque(-20 * rollPower * Time.deltaTime, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);
+		rb.AddRelativeTorque(-15f * Time.deltaTime * rollPower, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);
 	}
 
 	private void cameraUpdate(GameObject camera)
