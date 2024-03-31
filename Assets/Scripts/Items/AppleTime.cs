@@ -26,7 +26,7 @@ public class AppleTime : MonoBehaviour
 
         ripeness = (WindingTime.S.hours - 2f) / 20f;
 
-        if (ripeness >= 1) { 
+        if (ripeness >= 1 ) { 
             Destroy(this.gameObject); 
             Destroy(this);
                 }
@@ -34,7 +34,7 @@ public class AppleTime : MonoBehaviour
         {
             anim.Play("AppleAnim", 0, ripeness);
             if (ripeness >= 0.4) { onTree = false; }
-            if (WindingTime.S.hours >= 9 && transform.parent.GetComponent<AppleSpawn>() && GetComponent<Rigidbody>().isKinematic) { GetComponent<Rigidbody>().isKinematic = false; }
+            if (WindingTime.S.hours >= 9 && transform.parent && transform.parent.GetComponent<AppleSpawn>() && GetComponent<Rigidbody>().isKinematic) { GetComponent<Rigidbody>().isKinematic = false; }
         }
     }
 }
