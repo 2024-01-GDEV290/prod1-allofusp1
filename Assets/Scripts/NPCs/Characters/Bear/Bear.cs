@@ -26,7 +26,7 @@ public class Bear : Character
 
     private void LateUpdate()
     {
-        if (state == BearState.walking && transform.position == stumpWaypoint.transform.position) ;
+        if (state == BearState.walking && transform.position == stumpWaypoint.transform.position)
         {
             state = BearState.calm;            
         }
