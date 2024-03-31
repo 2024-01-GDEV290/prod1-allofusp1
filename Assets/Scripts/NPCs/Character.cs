@@ -16,7 +16,6 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected AudioClip[] defaultInteractSounds;
     [SerializeField] protected AudioSource audioSource;
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();

@@ -15,7 +15,14 @@ public class Stump : Prop
             if (ripeness >= .5f && ripeness<= .6f)
             {
                 player.DropItem();
+                successAudioTrigger.Raise();
                 successTrigger.Raise();
+
+            }
+            else
+            {
+                failureAudioTrigger.Raise();
+                player.DropItem();
             }
 
         }

@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Prop : MonoBehaviour
 {
     [SerializeField] protected PlayerMotor player;
-
+    [SerializeField] protected GameEventTrigger successAudioTrigger;
+    [SerializeField] protected GameEventTrigger failureAudioTrigger;
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<PlayerMotor>();
