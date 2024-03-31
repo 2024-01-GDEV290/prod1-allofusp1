@@ -24,8 +24,6 @@ public class Actor : MonoBehaviour
     [SerializeField] ScheduleEvent currentScheduleEvent;
     [SerializeField] GameObject wayPoint;
     [SerializeField] public RelativePlayerLocation relativePlayerLocation;
-    [SerializeField] float playerAngleFromForward = 0;
-    [SerializeField] float playerAngleFromRight = 0;
     [SerializeField] NavMeshAgent agent;
     private void Awake()
     {
@@ -69,11 +67,21 @@ public class Actor : MonoBehaviour
         }
     }
 
+    float PlayerAngleFromForward()
+    {
+        return Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
+    }
+
+    float PlayerAngleFromRight()
+    {
+        return Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
+    }
+
     void OrientSprite()
     {
-/*        playerAngleFromForward = Vector3.Angle(Camera.main.transform.position - transform.position, transform.forward);
+/*        
         playerAngleFromRight = Vector3.Angle(Camera.main.transform.position - transform.position, transform.right);
-        if (playerAngleFromForward >= 90)
+        if (PlayerAngleFromForward() >= 90)
         {
             relativePlayerLocation = RelativePlayerLocation.Back;
         }
@@ -83,7 +91,7 @@ public class Actor : MonoBehaviour
         }
 */
         characterBody.transform.localRotation = Quaternion.Euler(0,Camera.main.transform.eulerAngles.y, 0);
-/*        if (playerAngleFromRight >= 90)
+/*        if (PlayerAngleFromRight() >= 90)
         {
             characterBody.transform.localRotation = Quaternion.Euler(0, -playerAngleFromForward, 0);
         }
