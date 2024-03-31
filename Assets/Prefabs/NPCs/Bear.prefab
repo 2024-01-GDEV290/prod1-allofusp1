@@ -54,8 +54,6 @@ MonoBehaviour:
   currentScheduleEvent: {fileID: 0}
   wayPoint: {fileID: 0}
   relativePlayerLocation: 0
-  playerAngleFromForward: 0
-  playerAngleFromRight: 0
   agent: {fileID: 0}
 --- !u!195 &5079921358188939133
 NavMeshAgent:
@@ -212,13 +210,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4c71875f151862f4888fb90746017210, type: 3}
   audioSource: {fileID: 0}
   inventory: []
-  desiredItem: {fileID: 11400000, guid: 8a2b0759b5e9b3d4e9e744d7a9dbbe68, type: 2}
   satisfiedDialogue: Rwaaaargh. ^_^
   openGateTrigger: {fileID: 11400000, guid: 58b4f0433925c3d44bf9f1ba426e01a7, type: 2}
   stumpWaypoint: {fileID: 0}
   calmInteractSounds:
   - {fileID: 8300000, guid: 940cb819a32291042a6704c6b9b6530f, type: 3}
   - {fileID: 8300000, guid: 02f18ae906a2f9346af0bb9dbb2971ea, type: 3}
+  state: 0
+  calmSprite: {fileID: 0}
+  angrySprite: {fileID: 0}
+  sleepingSprite: {fileID: 0}
+  walkingSprite: {fileID: 0}
 --- !u!114 &8004319431673622927
 MonoBehaviour:
   m_ObjectHideFlags: 0
