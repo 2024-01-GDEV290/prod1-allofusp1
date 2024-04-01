@@ -1525,6 +1525,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1165056572861553299, guid: cdbee920261a5ad4d9afcfc10101cd04,
+        type: 3}
+      propertyPath: nextLineTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c,
+        type: 2}
     - target: {fileID: 9009380304714996687, guid: cdbee920261a5ad4d9afcfc10101cd04,
         type: 3}
       propertyPath: m_LocalPosition.x

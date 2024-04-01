@@ -16,6 +16,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected AudioClip[] defaultInteractSounds;
     [SerializeField] protected AudioSource audioSource;
+
+    [SerializeField] protected GameEventTrigger nextLineTrigger;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -33,6 +35,11 @@ public abstract class Character : MonoBehaviour
         {
             spriteRenderer.sprite = spriteManager.frontIdle;
         }
+    }
+    protected void InitiateDialogue(string[] lines)
+    {
+        Dialogue.lines = lines;
+        nextLineTrigger.Raise();
     }
     public abstract void CharacterBehavior();
 

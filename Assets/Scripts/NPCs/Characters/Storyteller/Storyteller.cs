@@ -5,6 +5,8 @@ using UnityEngine;
 public class Storyteller : Character
 {
     [TextArea][SerializeField] string nightTimeDialogue;
+    [SerializeField] string[] nightTimeLines;
+    [SerializeField] string[] dayTimeLines;
     [TextArea][SerializeField] string dayTimeDialogue; 
     [SerializeField] GameEventTrigger openGateTrigger;
     [SerializeField] int nightStartTime = 18;
@@ -17,20 +19,15 @@ public class Storyteller : Character
     [SerializeField] Sprite sleepingSprite;
     [SerializeField] Sprite walkingSprite;*/
 
-    private void LateUpdate()
-    {
-
-    }
-
     public override void CharacterBehavior()
     {
-        if (CheckTime() >= nightEndTime || CheckTime() <= nightStartTime)
+        if (CheckTime() >= nightStartTime || CheckTime() <= nightEndTime)
         {
-            Debug.Log(nightTimeDialogue);
+           InitiateDialogue(nightTimeLines);
         }
         else
         {
-            Debug.Log(dayTimeDialogue);
+            InitiateDialogue( dayTimeLines);
         }
     }
 

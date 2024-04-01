@@ -6,9 +6,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using System.Reflection;
 
+public enum PlayerControlState
+{
+    onFoot,
+    dialogue
+}
 /*Artemis's Version*/
 public class PlayerMotor : MonoBehaviour
 {
+    InputManager inputManager;
     private CharacterController controller;
     public List<Item> inventory;
     public GameObject currentlyHeldItem;
@@ -32,6 +38,8 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] GameEventTrigger outOfInteractRange;
     [SerializeField] GameEventTrigger updateInventoryUI;
 
+    [SerializeField] GameEventTrigger nextLineTrigger;
+
     [Header("Camera/Look")]
     [SerializeField] private Camera cam;
     private float xRotation = 0.0f;
@@ -46,6 +54,7 @@ public class PlayerMotor : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<CharacterController>();
+        inputManager = GetComponent<InputManager>();
         inventory = new List<Item>();
         timeSinceAdvance = 0;
     }
@@ -164,6 +173,11 @@ public class PlayerMotor : MonoBehaviour
             heldItemAnchor.DetachChildren();
             currentlyHeldItem = null;
         }
+    }
+
+    public void NextLine()
+    {
+        nextLineTrigger.Raise();
     }
 
     // Advance and reverse time should eventually fire events, but just wiring them directly to the crank for now. 

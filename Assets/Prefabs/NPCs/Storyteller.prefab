@@ -158,7 +158,20 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   defaultInteractSounds: []
   audioSource: {fileID: 0}
+  nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   nightTimeDialogue: 'Aha! You''ve come to hear my song! Here we go! '
+  nightTimeLines:
+  - Aha!
+  - 'You''ve come to hear my song! '
+  - 'Here we go! '
+  dayTimeLines:
+  - Aha!
+  - Another traveler!
+  - I bet you've come to hear me play!
+  - Well, that's too bad!
+  - I can't play my flute without the crackling of a campfire to accompany me.
+  - And everybody knows you can't just light a campfire in the middle of the day!
+  - Come back this evening!
   dayTimeDialogue: Aha! Another traveler! I bet you've come to hear me play! Well,
     that's too bad! I can't play my flute without the crackling of a campfire to
     accompany me. And everybody knows you can't just light a campfire in the middle
@@ -166,6 +179,7 @@ MonoBehaviour:
   openGateTrigger: {fileID: 0}
   nightStartTime: 19
   nightEndTime: 5
+  successSoundTrigger: {fileID: 0}
 --- !u!82 &69080006592208274
 AudioSource:
   m_ObjectHideFlags: 0

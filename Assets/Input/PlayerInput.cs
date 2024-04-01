@@ -313,6 +313,34 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""a3bce7f5-53f1-4653-bd18-9cd977c5bf5e"",
+            ""actions"": [
+                {
+                    ""name"": ""NextLine"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f43b615-60ca-4fef-921c-501aa25c32b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""08fd67bb-9246-43d6-b276-507cb702282a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -326,6 +354,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnFoot_ResetScene = m_OnFoot.FindAction("Reset Scene", throwIfNotFound: true);
         m_OnFoot_AdvanceTime = m_OnFoot.FindAction("Advance Time", throwIfNotFound: true);
         m_OnFoot_ReverseTime = m_OnFoot.FindAction("Reverse Time", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_NextLine = m_Dialogue.FindAction("NextLine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -477,6 +508,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public OnFootActions @OnFoot => new OnFootActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_NextLine;
+    public struct DialogueActions
+    {
+        private @PlayerInput m_Wrapper;
+        public DialogueActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NextLine => m_Wrapper.m_Dialogue_NextLine;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void AddCallbacks(IDialogueActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @NextLine.started += instance.OnNextLine;
+            @NextLine.performed += instance.OnNextLine;
+            @NextLine.canceled += instance.OnNextLine;
+        }
+
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @NextLine.started -= instance.OnNextLine;
+            @NextLine.performed -= instance.OnNextLine;
+            @NextLine.canceled -= instance.OnNextLine;
+        }
+
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     public interface IOnFootActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -486,5 +563,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnResetScene(InputAction.CallbackContext context);
         void OnAdvanceTime(InputAction.CallbackContext context);
         void OnReverseTime(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
+        void OnNextLine(InputAction.CallbackContext context);
     }
 }

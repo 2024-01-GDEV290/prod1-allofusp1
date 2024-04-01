@@ -127,8 +127,9 @@ MonoBehaviour:
   actor: {fileID: 0}
   spriteManager: {fileID: 11400000, guid: a8408fbf8d181114587a6896bfd31702, type: 2}
   spriteRenderer: {fileID: 0}
-  DefaultInteractSounds: []
+  defaultInteractSounds: []
   audioSource: {fileID: 0}
+  nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
 --- !u!114 &1481699734093591367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +212,6 @@ MonoBehaviour:
   currentScheduleEvent: {fileID: 0}
   wayPoint: {fileID: 0}
   relativePlayerLocation: 0
-  playerAngleFromForward: 0
-  playerAngleFromRight: 0
   agent: {fileID: 0}
 --- !u!82 &6035302643857973887
 AudioSource:

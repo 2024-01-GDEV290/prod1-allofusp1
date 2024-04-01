@@ -8,14 +8,18 @@ public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
+    private PlayerInput.DialogueActions dialogue;
     private PlayerMotor motor;
+    public static InputManager S;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        S = this;
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
+        dialogue = playerInput.Dialogue;
         
         // Player Movement
         motor = GetComponent<PlayerMotor>();
@@ -31,8 +35,23 @@ public class InputManager : MonoBehaviour
         // Interact with Items or NPCs
         onFoot.Interact.performed += ctx => motor.Interact();
 
+        // Advance dialogue
+        dialogue.NextLine.performed += ctx => motor.NextLine();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+    }
+    public void SetOnFoot()
+    {
+        onFoot.Enable();
+        dialogue.Disable();
+    }
+
+    public void SetDialogue()
+    {
+        dialogue.Enable();
+        onFoot.Disable();
 
     }
     // Update is called once per frame

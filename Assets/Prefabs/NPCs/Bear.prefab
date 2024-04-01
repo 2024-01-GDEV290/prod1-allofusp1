@@ -209,6 +209,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1e042582ce79baf45a648eff70aa2d67, type: 3}
   - {fileID: 8300000, guid: 4c71875f151862f4888fb90746017210, type: 3}
   audioSource: {fileID: 0}
+  nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   inventory: []
   satisfiedDialogue: Rwaaaargh. ^_^
   openGateTrigger: {fileID: 11400000, guid: 58b4f0433925c3d44bf9f1ba426e01a7, type: 2}
