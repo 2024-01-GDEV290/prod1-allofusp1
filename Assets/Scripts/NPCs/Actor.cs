@@ -29,7 +29,6 @@ public class Actor : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         if (displayName == null) displayName = gameObject.name;
-
     }
 
     private void Update()
@@ -49,7 +48,6 @@ public class Actor : MonoBehaviour
 
     public void ReciteLines()
     {
-        Debug.Log("Reciting Lines");
         if(behaviorTrigger) behaviorTrigger.Raise();
     }
 
