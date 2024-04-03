@@ -71,7 +71,20 @@ public class NPCInteraction : MonoBehaviour
                 }
             }
 
-            
+            if (hit.collider.CompareTag("paper"))
+            {
+                interactionText.SetActive(true);
+                Debug.Log("Hit: " + hit.collider.name);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+
+                    dialogueTrigger.SetActive(true);
+                    fpsController.ToggleMovement(false); //lock character movement
+
+                }
+            }
+
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
