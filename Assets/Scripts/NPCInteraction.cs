@@ -9,7 +9,8 @@ public class NPCInteraction : MonoBehaviour
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public FirstPersonController fpsController;
-
+   
+    
 
     void Start()
     {
@@ -56,6 +57,17 @@ public class NPCInteraction : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     SceneManager.LoadScene("treeScene");
+                }
+            }
+
+            if (hit.collider.CompareTag("collectible"))
+            {
+                interactionText.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    collectionScript.instance.CollectItem();
+                    hit.collider.gameObject.SetActive(false); 
                 }
             }
 
