@@ -20,6 +20,6 @@ public class LoadCave : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D CaveEntrance)
     {
-        SceneManager.LoadScene("Cave", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Cave1", LoadSceneMode.Single);
     }
 }

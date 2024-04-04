@@ -20,6 +20,7 @@ public class SubmarineMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void FixedUpdate()
