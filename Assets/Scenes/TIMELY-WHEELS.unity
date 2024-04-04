@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17758471, g: 0.22233005, b: 0.30452502, a: 1}
+  m_IndirectSpecularColor: {r: 0.177579, g: 0.22232251, b: 0.30451912, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2012,6 +2012,7 @@ GameObject:
   - component: {fileID: 678449966}
   - component: {fileID: 678449965}
   - component: {fileID: 678449969}
+  - component: {fileID: 678449970}
   m_Layer: 0
   m_Name: Lake
   m_TagString: Untagged
@@ -2127,6 +2128,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &678449970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678449964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928936ee393c0914b843dda5d1ea97a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowTideHr: 2
+  animationName: LakeAnim
 --- !u!4 &686600932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4955239480698859663, guid: 30893fbc30f61464684d20a4030e74a3,
