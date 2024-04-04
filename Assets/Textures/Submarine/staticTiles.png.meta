@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e33b1e074c3511d47b8979d581b12879
+guid: e969f9d472b8eac44ac0bd7d2b4d10cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waves_0
+      name: staticTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dc099e04a1dbe44bafd174e5db8b90f
-      internalID: -481637744
+      spriteID: 3ca06ec097300fd43bffc6d512f0c1aa
+      internalID: -334935280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waves_1
+      name: staticTiles_1
       rect:
         serializedVersion: 2
         x: 16
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 416ef11c23b56804b8d055a04f29f417
-      internalID: 1660456133
+      spriteID: 4e9510c17cf70874fb9c315188bba47a
+      internalID: -377515040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waves_2
+      name: staticTiles_2
       rect:
         serializedVersion: 2
         x: 32
@@ -205,113 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec944bd9f03b38946ac0ef671be8855b
-      internalID: 1379604502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waves_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f13e90f9cf46a324abfaf3ed715dde97
-      internalID: -531881518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waves_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f202a45aab1343f4091610d5e77d4cb7
-      internalID: 1206954607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waves_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52f42f69d0560a64db1a31fe45904da8
-      internalID: -921838311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waves_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 189ecab2008ad284abfc5ed289e097b7
-      internalID: 1536387951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: waves_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 646c0486a7ffe494787e5cd4c46aeebc
-      internalID: 1043835467
+      spriteID: d729b94421d425246b1aa15f21ec292e
+      internalID: -1053049161
       vertices: []
       indices: 
       edges: []
@@ -319,7 +214,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4b8d644f4f549c143a642e039fe97295
     internalID: 0
     vertices: []
     indices: 
@@ -327,14 +222,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waves_0: -481637744
-      waves_1: 1660456133
-      waves_2: 1379604502
-      waves_3: -531881518
-      waves_4: 1206954607
-      waves_5: -921838311
-      waves_6: 1536387951
-      waves_7: 1043835467
+      staticTiles_0: -334935280
+      staticTiles_1: -377515040
+      staticTiles_2: -1053049161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
