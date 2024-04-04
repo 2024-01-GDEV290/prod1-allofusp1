@@ -37,7 +37,7 @@ public class collectionScript : MonoBehaviour
 
     void TriggerWinEvent()
     {
-        // Trigger your win condition here
+        
         Debug.Log("Win condition triggered.");
         SceneManager.LoadScene("streetScene");
 

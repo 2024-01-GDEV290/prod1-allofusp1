@@ -132,6 +132,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1043118768868185118, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: sentences.Array.size
