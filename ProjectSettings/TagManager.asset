@@ -8,6 +8,8 @@ TagManager:
   - door
   - collectible
   - paper
+  - rock
+  - bedroomDoor
   layers:
   - Default
   - TransparentFX

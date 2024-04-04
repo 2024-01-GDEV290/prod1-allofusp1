@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class collectionScript : MonoBehaviour
 {
@@ -38,5 +39,7 @@ public class collectionScript : MonoBehaviour
     {
         // Trigger your win condition here
         Debug.Log("Win condition triggered.");
+        SceneManager.LoadScene("streetScene");
+
     }
 }

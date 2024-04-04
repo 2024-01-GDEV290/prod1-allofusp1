@@ -81,10 +81,28 @@ public class NPCInteraction : MonoBehaviour
 
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
+                    
 
                 }
             }
 
+            if (hit.collider.CompareTag("rock"))
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene("bedroomScene");
+                }
+                
+            }
+
+            if (hit.collider.CompareTag("bedroomDoor"))
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene("collectionScene");
+                }
+
+            }
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
