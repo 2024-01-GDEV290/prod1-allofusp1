@@ -49,6 +49,7 @@ public class PlayerMotor : MonoBehaviour
     [Header("Advance/Reverse time")]
     //[SerializeField] Crank crank; 
     [SerializeField] private float timeSinceAdvance;
+    [SerializeField] [Range(0,1)] private float timeChangeDelay;
 
     // Start is called before the first frame update
     void Awake()
@@ -183,7 +184,7 @@ public class PlayerMotor : MonoBehaviour
     // Advance and reverse time should eventually fire events, but just wiring them directly to the crank for now. 
     public void AdvanceTime(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && timeSinceAdvance > 1)
+        if (ctx.performed && timeSinceAdvance > timeChangeDelay)
         {
             timeSinceAdvance = 0;
             WindingTime.S.AdvanceTime(WindingTime.MAX_DEGREE / 24);
