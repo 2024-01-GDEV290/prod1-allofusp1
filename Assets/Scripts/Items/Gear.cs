@@ -6,10 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 public class Gear : MonoBehaviour
 {
     [SerializeField] float spinRate = 10.0f;
+    [SerializeField] bool reverseSpin = false;
 
     private void FixedUpdate()
     {
-        transform.RotateAround(transform.position, transform.right, spinRate * Time.deltaTime);
+        float amount = (reverseSpin ? -1 : 1) * (spinRate * Time.deltaTime);
+        transform.RotateAround(transform.position, transform.right, amount);
     }
 }
 

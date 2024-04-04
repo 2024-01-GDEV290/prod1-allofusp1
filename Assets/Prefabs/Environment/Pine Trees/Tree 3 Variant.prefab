@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7cc0f7a1751ec89429563ad7c1f9ee8a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f864f3f52ad0a8244bb4b8f15597b46e, type: 2}
     - target: {fileID: 919132149155446097, guid: 7cc0f7a1751ec89429563ad7c1f9ee8a,
         type: 3}
       propertyPath: m_Name
@@ -69,7 +74,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cc0f7a1751ec89429563ad7c1f9ee8a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6602074524200129307}
+      addedObject: {fileID: 6635489664665367794}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7cc0f7a1751ec89429563ad7c1f9ee8a,
         type: 3}
@@ -183,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a02f5890ed3b75d409ec608c075a76d2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ad614b2b5228a541b81744578e91a7f, type: 2}
     - target: {fileID: 919132149155446097, guid: a02f5890ed3b75d409ec608c075a76d2,
         type: 3}
       propertyPath: m_Name
@@ -197,7 +207,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4738566861670016124}
   m_SourcePrefab: {fileID: 100100000, guid: a02f5890ed3b75d409ec608c075a76d2, type: 3}
---- !u!1 &6602074524200129306 stripped
+--- !u!1 &6295520031461076552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a02f5890ed3b75d409ec608c075a76d2,
     type: 3}
@@ -209,7 +219,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6602074524200129306}
+  m_GameObject: {fileID: 6295520031461076552}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -225,7 +235,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5638689938836609680, guid: a02f5890ed3b75d409ec608c075a76d2, type: 3}
---- !u!4 &6602074524200129307 stripped
+--- !u!4 &6635489664665367794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a02f5890ed3b75d409ec608c075a76d2,
     type: 3}
