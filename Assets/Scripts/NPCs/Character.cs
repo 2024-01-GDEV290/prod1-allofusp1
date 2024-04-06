@@ -16,6 +16,10 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected AudioSource audioSource;
     [SerializeField] protected GameEventTrigger nextLineTrigger;
     [SerializeField] protected GameEventTrigger voiceTrigger;
+    [SerializeField] protected int voiceFrequency = 3;
+    private int voiceCounter = 0;
+    [SerializeField] protected float voiceUpperPitchLimit = 1.2f;
+    [SerializeField] protected float voiceLowerPitchLimit = .8f;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,8 +38,12 @@ public abstract class Character : MonoBehaviour
 
     public void Speak()
     {
-        audioSource.pitch = Random.Range(.8f, 1.2f);
-        audioSource.PlayOneShot(voice);
+        if(voiceCounter % voiceFrequency == 0)
+        {
+            audioSource.pitch = Random.Range(voiceLowerPitchLimit, voiceUpperPitchLimit);
+            audioSource.PlayOneShot(voice);
+        }
+        voiceCounter++;
     }
     public abstract void CharacterBehavior();
 

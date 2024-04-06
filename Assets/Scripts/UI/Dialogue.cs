@@ -48,7 +48,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[lineIndex].ToCharArray())
         {
             text.text += c;
-            if (voiceTrigger != null && text.text.Length%3 == 0 && !(c == ' ' || c == ',' || c == '.' ))
+            if (voiceTrigger != null && !(c == ' ' || c == ',' || c == '.' ))
             {
                 voiceTrigger.Raise();
             }
