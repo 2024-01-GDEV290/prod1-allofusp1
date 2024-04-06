@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9033009065859302599}
   - component: {fileID: 1481699734093591367}
   - component: {fileID: 5194433920906221600}
+  - component: {fileID: 6043695272180238717}
+  - component: {fileID: 151294185617236236}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -123,13 +125,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e23f8b39410835468e918786ff6896c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDialogue: I ain't fightin' her, kid. But I hear she likes apples.
+  defaultDialogue: 
+  voice: {fileID: 8300000, guid: 81611821b05db604aa1f30418f558b65, type: 3}
   player: {fileID: 0}
   actor: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  defaultInteractSounds: []
   audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
+  voiceTrigger: {fileID: 11400000, guid: 499bddd6fd875474c8f41a809c7fc1be, type: 2}
+  voiceFrequency: 3
+  voiceUpperPitchLimit: 1.2
+  voiceLowerPitchLimit: 0.8
+  defaultLines:
+  - What?
+  - Me? Hunting bears?
+  - No! I'm hunting uh...
+  - rabbits.
+  - Dire rabbits.
+  - Yeah.
+  - ...
+  - Not sure about your bear problem.
+  - 'I hear she likes apples. '
+  - But she's got a sweet tooth,
+  - 'so you need to make sure that the apple is nice and ripe and red. '
+  - 'Otherwise she gets mad. '
 --- !u!114 &1481699734093591367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +198,130 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6043695272180238717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 499bddd6fd875474c8f41a809c7fc1be, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9033009065859302599}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!82 &151294185617236236
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8100203392684350238
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,14 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1faf5a1c768868645822c47142bd345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  schedule: []
-  actorMoveSpd: 2
   displayName: Hunter
   behaviorTrigger: {fileID: 11400000, guid: fffc0c00389e4d44395b0630cfb0f1f2, type: 2}
   characterBody: {fileID: 6204721975481465807}
-  currentScheduleEvent: {fileID: 0}
-  wayPoint: {fileID: 0}
-  relativePlayerLocation: 0
   agent: {fileID: 0}
 --- !u!82 &6035302643857973887
 AudioSource:
