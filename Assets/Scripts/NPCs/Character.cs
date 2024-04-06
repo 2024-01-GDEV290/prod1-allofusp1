@@ -24,9 +24,10 @@ public abstract class Character : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
-    protected void InitiateDialogue(string[] lines)
+    protected void InitiateDialogue(string[] lines, List<GameEventTrigger> completionTriggers = null)
     {
         Dialogue.lines = lines;
+        if (completionTriggers != null) Dialogue.completionTriggers = completionTriggers;
         nextLineTrigger.Raise();
     }
     public abstract void CharacterBehavior();

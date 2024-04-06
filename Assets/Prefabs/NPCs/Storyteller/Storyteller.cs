@@ -1,33 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
+public enum StorytellerState
+{
+    idle,
+    talking,
+    flute
+}
 public class Storyteller : Character
 {
-    [TextArea][SerializeField] string nightTimeDialogue;
+    [SerializeField] string[] interactionCompleteLines;
     [SerializeField] string[] nightTimeLines;
     [SerializeField] string[] dayTimeLines;
-    [TextArea][SerializeField] string dayTimeDialogue; 
-    [SerializeField] GameEventTrigger openGateTrigger;
+
     [SerializeField] int nightStartTime = 18;
     [SerializeField] int nightEndTime = 5;
+    private bool interactionComplete = false;
+    [SerializeField] GameEventTrigger playFluteTrigger;
+    [SerializeField] GameEventTrigger openGateTrigger;
     [SerializeField] GameEventTrigger successSoundTrigger;
-/*    [Header("Sprite Display States")]
-    [SerializeField] BearState state;
-    [SerializeField] Sprite calmSprite;
-    [SerializeField] Sprite angrySprite;
-    [SerializeField] Sprite sleepingSprite;
-    [SerializeField] Sprite walkingSprite;*/
+
+    [SerializeField] StorytellerState state;
+
+
+    private void Start()
+    {
+        state = StorytellerState.idle;
+    }
 
     public override void CharacterBehavior()
     {
-        if (CheckTime() >= nightStartTime || CheckTime() <= nightEndTime)
+        if (interactionComplete) {
+            InitiateDialogue(interactionCompleteLines);
+        }
+        else if (CheckTime() >= nightStartTime || CheckTime() <= nightEndTime)
         {
-           InitiateDialogue(nightTimeLines);
+            TriggerSuccessSound();
+            InitiateDialogue(nightTimeLines, new List<GameEventTrigger> { playFluteTrigger });
+            interactionComplete = true;
         }
         else
         {
-            InitiateDialogue( dayTimeLines);
+            InitiateDialogue(dayTimeLines);
         }
     }
 
@@ -41,9 +57,10 @@ public class Storyteller : Character
         successSoundTrigger.Raise();
     }
 
-    void PlaySong()
+    public void PlaySong()
     {
-
+        Debug.Log("Storyteller: Doot doot doot. I'm playing my song.");
+        openGateTrigger.Raise();
     }
 
     void openGate()

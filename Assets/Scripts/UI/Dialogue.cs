@@ -14,13 +14,14 @@ public class Dialogue : MonoBehaviour
     public static Dialogue S;
     public TextMeshProUGUI text;
     public static string[] lines;
+    public static List<GameEventTrigger> completionTriggers;
     public float textSpeed;
     private int lineIndex;
     private DialogueState state;
-    [SerializeField] GameEventTrigger nextLineTrigger;
 
     private void Awake()
     {
+        completionTriggers = new List<GameEventTrigger>();
         text.text = string.Empty;
         S = this;
     }
@@ -72,6 +73,11 @@ public class Dialogue : MonoBehaviour
     {
         lineIndex = 0;
         text.text = string.Empty;
+        if (completionTriggers.Count >0)
+        {
+            completionTriggers.ForEach(trigger => trigger.Raise());
+            completionTriggers = new List<GameEventTrigger>();
+        }
         InputManager.S.SetOnFoot();
     }
 }
