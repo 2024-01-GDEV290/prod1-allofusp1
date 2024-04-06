@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 69080006592208274}
   - component: {fileID: 1348775439502189288}
   - component: {fileID: 1142501353785239095}
+  - component: {fileID: 5262862729276634353}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -154,12 +155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDialogue: 
+  voice: {fileID: 8300000, guid: bc72aa7c144842243a46f2c877e761f8, type: 3}
   player: {fileID: 0}
   actor: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  defaultInteractSounds: []
   audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
+  voiceTrigger: {fileID: 11400000, guid: 886e15e5fe1ea7146875826db93d73cf, type: 2}
   interactionCompleteLines:
   - Aha!
   - Well, I hope the path ahead is a little clearer for you now.
@@ -319,6 +321,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5185643701024393302}
         m_TargetAssemblyTypeName: Storyteller, Assembly-CSharp
         m_MethodName: PlaySong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5262862729276634353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 886e15e5fe1ea7146875826db93d73cf, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5185643701024393302}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: Speak
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 
 public enum DialogueState
 {
@@ -15,6 +16,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI text;
     public static string[] lines;
     public static List<GameEventTrigger> completionTriggers;
+    public static GameEventTrigger voiceTrigger;
     public float textSpeed;
     private int lineIndex;
     private DialogueState state;
@@ -22,6 +24,7 @@ public class Dialogue : MonoBehaviour
     private void Awake()
     {
         completionTriggers = new List<GameEventTrigger>();
+        voiceTrigger = null;
         text.text = string.Empty;
         S = this;
     }
@@ -45,6 +48,10 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[lineIndex].ToCharArray())
         {
             text.text += c;
+            if (voiceTrigger != null && text.text.Length%3 == 0 && !(c == ' ' || c == ',' || c == '.' ))
+            {
+                voiceTrigger.Raise();
+            }
             yield return new WaitForSeconds(textSpeed);
         }
         state = DialogueState.ready;
@@ -58,13 +65,10 @@ public class Dialogue : MonoBehaviour
             InputManager.S.SetDialogue();
             if (lineIndex < lines.Length)
             {
-
-
                 StartCoroutine(TypeLine());
             }
             else
             {
-
                 EndInteraction();
             }
         }
@@ -77,6 +81,7 @@ public class Dialogue : MonoBehaviour
         {
             completionTriggers.ForEach(trigger => trigger.Raise());
             completionTriggers = new List<GameEventTrigger>();
+            voiceTrigger = null;
         }
         InputManager.S.SetOnFoot();
     }

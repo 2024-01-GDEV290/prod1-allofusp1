@@ -34,7 +34,6 @@ public class Bear : Character
 
     public override void CharacterBehavior()
     {
-        audioSource.PlayOneShot(defaultInteractSounds[Random.Range(0,defaultInteractSounds.Length - 1)]);    
         Debug.Log(defaultDialogue); 
     }
 
@@ -42,7 +41,6 @@ public class Bear : Character
     {
         Debug.Log(satisfiedDialogue);
         actor.MoveToWaypoint(stumpWaypoint.transform);
-        defaultInteractSounds = calmInteractSounds;
         openGateTrigger.Raise();
     }
 }
