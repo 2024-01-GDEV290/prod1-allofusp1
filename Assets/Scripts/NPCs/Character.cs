@@ -15,7 +15,6 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected AudioClip[] defaultInteractSounds;
     [SerializeField] protected AudioSource audioSource;
-
     [SerializeField] protected GameEventTrigger nextLineTrigger;
     private void Awake()
     {
@@ -25,16 +24,6 @@ public abstract class Character : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
-    private void LateUpdate()
-    {
-/*        if (actor.relativePlayerLocation == RelativePlayerLocation.Back && spriteRenderer.sprite != spriteManager.backIdle)
-        {
-            spriteRenderer.sprite = spriteManager.backIdle;
-        }else if (actor.relativePlayerLocation == RelativePlayerLocation.Front && spriteRenderer.sprite != spriteManager.frontIdle)
-        {
-            spriteRenderer.sprite = spriteManager.frontIdle;
-        }*/
-    }
     protected void InitiateDialogue(string[] lines)
     {
         Dialogue.lines = lines;
