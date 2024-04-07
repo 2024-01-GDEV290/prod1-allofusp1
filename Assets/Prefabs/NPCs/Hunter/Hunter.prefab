@@ -136,6 +136,7 @@ MonoBehaviour:
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
+  animator: {fileID: 0}
   defaultLines:
   - What?
   - Me? Hunting bears?
@@ -188,7 +189,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7ee56dca7d7d9e84bb8d94834f93e46e, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

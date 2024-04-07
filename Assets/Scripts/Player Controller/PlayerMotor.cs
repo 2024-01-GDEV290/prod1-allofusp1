@@ -40,6 +40,7 @@ public class PlayerMotor : MonoBehaviour
 
     [SerializeField] GameEventTrigger nextLineTrigger;
 
+    
     [Header("Camera/Look")]
     [SerializeField] private Camera cam;
     private float xRotation = 0.0f;
@@ -47,13 +48,11 @@ public class PlayerMotor : MonoBehaviour
     public float ySensitivity = 30f;
 
     [Header("Advance/Reverse time")]
-    //[SerializeField] Crank crank; 
     [SerializeField] private float timeSinceAdvance;
     [SerializeField] [Range(0,1)] private float timeChangeDelay;
-
-    // Start is called before the first frame update
     void Awake()
     {
+        
         controller = GetComponent<CharacterController>();
         inputManager = GetComponent<InputManager>();
         inventory = new List<Item>();
@@ -65,11 +64,7 @@ public class PlayerMotor : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
         timeSinceAdvance += Time.deltaTime;
-    }
-
-    private void FixedUpdate()
-    {
-        CheckInteractionTarget();
+        
     }
 
     public void ProcessMove(Vector2 input)
@@ -94,15 +89,13 @@ public class PlayerMotor : MonoBehaviour
             {
                 interactionTarget = hit.transform.gameObject;
                 withinInteractRange.Raise();
-
             }
-
         } else if (interactionTarget != null)
             {
                 interactionTarget = null;
                 outOfInteractRange.Raise();
             }
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactRange, Color.green);
+/*        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactRange, Color.green);*/
     }
 
     public void ProcessLook(Vector2 input)
@@ -117,6 +110,7 @@ public class PlayerMotor : MonoBehaviour
 
         // Rotate player to look horizontally
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
+        CheckInteractionTarget();
     }
 
     public void Jump()

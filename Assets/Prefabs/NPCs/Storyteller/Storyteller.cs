@@ -36,7 +36,7 @@ public class Storyteller : Character
         if (interactionComplete) {
             InitiateDialogue(interactionCompleteLines, new List<GameEventTrigger>() { idleTrigger });
         }
-        else if (CheckTime() >= nightStartTime || CheckTime() <= nightEndTime)
+        else if (IsNight())
         {
             TriggerSuccessSound();
             InitiateDialogue(nightTimeLines, new List<GameEventTrigger> { playFluteTrigger });
@@ -52,7 +52,10 @@ public class Storyteller : Character
     {
         return WindingTime.S.hours;
     }
-
+    bool IsNight()
+    {
+        return CheckTime() >= nightStartTime || CheckTime() <= nightEndTime;
+    }
     void TriggerSuccessSound()
     {
         successSoundTrigger.Raise();
@@ -64,7 +67,28 @@ public class Storyteller : Character
         Debug.Log("Storyteller: Doot doot doot. I'm playing my song.");
         openGateTrigger.Raise();
 /*Swap voice here for flute song audioclip when implemented*/
-        Invoke(nameof(ResetAllTriggers), voice.length + 2);
+        Invoke(nameof(SetIdleAnimation), voice.length + 2);
     }
 
+    void LoopSong()
+    {
+
+    }
+    public void ObjectiveCompleteBehavior()
+    {
+        if (interactionComplete)
+        {
+            if (IsNight())
+            {
+                SetAnimation("flute");
+/*                audioSource.loop = true;
+                audioSource.Play();*/
+            }
+            else 
+            {
+/*                audioSource.Stop();*/
+                SetIdleAnimation();
+            }
+        }
+    }
 }
