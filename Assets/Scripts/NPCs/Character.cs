@@ -5,20 +5,24 @@ using static UnityEditor.Progress;
 
 public abstract class Character : MonoBehaviour
 {
+    [Header("Set In Inspector")]
     [TextArea]
     [SerializeField] protected string defaultDialogue;
     [SerializeField] protected AudioClip voice;
-    [SerializeField] protected PlayerMotor player;
-    [SerializeField] protected Actor actor;
-    [SerializeField] protected SpriteRenderer spriteRenderer;
-    [SerializeField] protected AudioSource audioSource;
     [SerializeField] protected GameEventTrigger nextLineTrigger;
     [SerializeField] protected GameEventTrigger voiceTrigger;
     [SerializeField] protected int voiceFrequency = 3;
-    private int voiceCounter = 0;
     [SerializeField] protected float voiceUpperPitchLimit = 1.2f;
     [SerializeField] protected float voiceLowerPitchLimit = .8f;
+    [SerializeField] GameEventTrigger successSoundTrigger;
+
+    [Header("Set Dynamically")]
+    [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected PlayerMotor player;
+    [SerializeField] protected Actor actor;
     [SerializeField] protected Animator animator;
+    private int voiceCounter = 0;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -66,5 +70,15 @@ public abstract class Character : MonoBehaviour
                 animator.ResetTrigger(param.name);
             }
         }
+    }
+
+    protected int CheckTime()
+    {
+        return WindingTime.S.hours;
+    }
+
+    protected void TriggerSuccessSound()
+    {
+        successSoundTrigger.Raise();
     }
 }

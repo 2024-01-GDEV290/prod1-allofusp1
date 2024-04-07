@@ -22,7 +22,6 @@ public class Storyteller : Character
     [SerializeField] GameEventTrigger playFluteTrigger;
     [SerializeField] GameEventTrigger idleTrigger;
     [SerializeField] GameEventTrigger openGateTrigger;
-    [SerializeField] GameEventTrigger successSoundTrigger;
 
 
     private void Start()
@@ -48,17 +47,9 @@ public class Storyteller : Character
         }
     }
 
-    int CheckTime()
-    {
-        return WindingTime.S.hours;
-    }
     bool IsNight()
     {
         return CheckTime() >= nightStartTime || CheckTime() <= nightEndTime;
-    }
-    void TriggerSuccessSound()
-    {
-        successSoundTrigger.Raise();
     }
 
     public void PlaySong()
