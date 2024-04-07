@@ -10,4 +10,5 @@ public class Hunter : Character
     {
         InitiateDialogue(defaultLines);
     }
+
 }

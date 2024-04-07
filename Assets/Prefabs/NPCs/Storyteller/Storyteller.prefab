@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1481699734093591367}
   - component: {fileID: 5185643701024393302}
   - component: {fileID: 69080006592208274}
-  - component: {fileID: 1348775439502189288}
   - component: {fileID: 1142501353785239095}
   - component: {fileID: 5262862729276634353}
+  - component: {fileID: 1683636648663366211}
+  - component: {fileID: 4400807388925172279}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -162,6 +163,10 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   voiceTrigger: {fileID: 11400000, guid: 886e15e5fe1ea7146875826db93d73cf, type: 2}
+  voiceFrequency: 3
+  voiceUpperPitchLimit: 1.2
+  voiceLowerPitchLimit: 0.8
+  animator: {fileID: 0}
   interactionCompleteLines:
   - Aha!
   - Well, I hope the path ahead is a little clearer for you now.
@@ -181,10 +186,10 @@ MonoBehaviour:
   nightStartTime: 19
   nightEndTime: 5
   playFluteTrigger: {fileID: 11400000, guid: 24e070dde7520fc4bb0e6bfd54ac417d, type: 2}
+  idleTrigger: {fileID: 11400000, guid: 908fc05dd3bb71e43a1ae71fb52723ea, type: 2}
   openGateTrigger: {fileID: 11400000, guid: f13c8be4cb1cf344a91894585663ba04, type: 2}
   successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
     type: 2}
-  state: 0
 --- !u!82 &69080006592208274
 AudioSource:
   m_ObjectHideFlags: 0
@@ -281,27 +286,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1348775439502189288
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6204721975481465807}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ceff19be44a7274a989e0a68cdba763, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1142501353785239095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +333,55 @@ MonoBehaviour:
       - m_Target: {fileID: 5185643701024393302}
         m_TargetAssemblyTypeName: Character, Assembly-CSharp
         m_MethodName: Speak
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1683636648663366211
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ceff19be44a7274a989e0a68cdba763, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4400807388925172279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 908fc05dd3bb71e43a1ae71fb52723ea, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5185643701024393302}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: SetIdleAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

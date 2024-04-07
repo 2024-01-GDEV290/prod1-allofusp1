@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum CharacterState{
-    idle,
-    walking
-}
+using static UnityEditor.Progress;
+
 public abstract class Character : MonoBehaviour
 {
     [TextArea]
@@ -20,8 +18,10 @@ public abstract class Character : MonoBehaviour
     private int voiceCounter = 0;
     [SerializeField] protected float voiceUpperPitchLimit = 1.2f;
     [SerializeField] protected float voiceLowerPitchLimit = .8f;
+    [SerializeField] protected Animator animator;
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.Find("Player").GetComponent<PlayerMotor>();
         actor = transform.parent.gameObject.GetComponent<Actor>();
@@ -47,5 +47,24 @@ public abstract class Character : MonoBehaviour
     }
     public abstract void CharacterBehavior();
 
+    protected void SetAnimation(string triggerID)
+    {
+        ResetAllTriggers();
+        animator.SetTrigger(triggerID);
+    }
 
+    public void SetIdleAnimation()
+    {
+        SetAnimation("idle");
+    }
+    protected void ResetAllTriggers()
+    {
+        foreach (var param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+    }
 }

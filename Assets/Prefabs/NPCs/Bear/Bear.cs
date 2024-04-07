@@ -36,7 +36,6 @@ public class Bear : Character
     {
         Debug.Log(defaultDialogue); 
     }
-
     public void LeaveCave()
     {
         Debug.Log(satisfiedDialogue);

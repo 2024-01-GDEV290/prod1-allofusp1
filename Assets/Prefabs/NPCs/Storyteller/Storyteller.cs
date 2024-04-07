@@ -18,22 +18,23 @@ public class Storyteller : Character
     [SerializeField] int nightStartTime = 18;
     [SerializeField] int nightEndTime = 5;
     private bool interactionComplete = false;
+    GameEventListener idleListener;
     [SerializeField] GameEventTrigger playFluteTrigger;
+    [SerializeField] GameEventTrigger idleTrigger;
     [SerializeField] GameEventTrigger openGateTrigger;
     [SerializeField] GameEventTrigger successSoundTrigger;
-
-    [SerializeField] StorytellerState state;
 
 
     private void Start()
     {
-        state = StorytellerState.idle;
+        SetAnimation("idle");
     }
 
     public override void CharacterBehavior()
     {
+        SetAnimation("talking");
         if (interactionComplete) {
-            InitiateDialogue(interactionCompleteLines);
+            InitiateDialogue(interactionCompleteLines, new List<GameEventTrigger>() { idleTrigger });
         }
         else if (CheckTime() >= nightStartTime || CheckTime() <= nightEndTime)
         {
@@ -43,7 +44,7 @@ public class Storyteller : Character
         }
         else
         {
-            InitiateDialogue(dayTimeLines);
+            InitiateDialogue(dayTimeLines, new List<GameEventTrigger>() { idleTrigger });
         }
     }
 
@@ -59,13 +60,11 @@ public class Storyteller : Character
 
     public void PlaySong()
     {
+        SetAnimation("flute");
         Debug.Log("Storyteller: Doot doot doot. I'm playing my song.");
         openGateTrigger.Raise();
-    }
-
-    void openGate()
-    {
-
+/*Swap voice here for flute song audioclip when implemented*/
+        Invoke(nameof(ResetAllTriggers), voice.length + 2);
     }
 
 }
