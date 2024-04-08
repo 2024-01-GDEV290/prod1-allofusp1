@@ -61,9 +61,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Height: 4
+  m_Height: 3.6261826
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.18690968, z: 0}
 --- !u!95 &1683636648663366211
 Animator:
   serializedVersion: 5
@@ -275,15 +275,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultDialogue: 
   voice: {fileID: 8300000, guid: bc72aa7c144842243a46f2c877e761f8, type: 3}
-  player: {fileID: 0}
-  actor: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   voiceTrigger: {fileID: 11400000, guid: 886e15e5fe1ea7146875826db93d73cf, type: 2}
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
+  successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
+    type: 2}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
+  player: {fileID: 0}
+  actor: {fileID: 0}
   animator: {fileID: 0}
   interactionCompleteLines:
   - Aha!
@@ -306,8 +308,6 @@ MonoBehaviour:
   playFluteTrigger: {fileID: 11400000, guid: 24e070dde7520fc4bb0e6bfd54ac417d, type: 2}
   idleTrigger: {fileID: 11400000, guid: 908fc05dd3bb71e43a1ae71fb52723ea, type: 2}
   openGateTrigger: {fileID: 11400000, guid: f13c8be4cb1cf344a91894585663ba04, type: 2}
-  successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
-    type: 2}
 --- !u!114 &1142501353785239095
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -128,10 +128,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.8738308
-  m_Height: 8.671368
+  m_Radius: 4.6691194
+  m_Height: 9.338239
   m_Direction: 1
-  m_Center: {x: -0.8056927, y: 0, z: 0.4855585}
+  m_Center: {x: -0.71069765, y: 1.3862023, z: 1.185852}
 --- !u!212 &8163990502860153226
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -198,15 +198,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultDialogue: RWAAAAARRRGH.
   voice: {fileID: 0}
-  player: {fileID: 0}
-  actor: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   voiceTrigger: {fileID: 0}
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
+  successSoundTrigger: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
+  player: {fileID: 0}
+  actor: {fileID: 0}
   animator: {fileID: 0}
   inventory: []
   satisfiedDialogue: Rwaaaargh. ^_^

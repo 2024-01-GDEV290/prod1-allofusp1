@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5194433920906221600}
   - component: {fileID: 6043695272180238717}
   - component: {fileID: 151294185617236236}
+  - component: {fileID: 846758824089229776}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6204721975481465807}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57,10 +58,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 4
+  m_Radius: 1.0294241
+  m_Height: 3.404852
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.12009462, z: 0.029424032}
 --- !u!212 &4181435356866449559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,15 +128,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultDialogue: 
   voice: {fileID: 8300000, guid: 81611821b05db604aa1f30418f558b65, type: 3}
-  player: {fileID: 0}
-  actor: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   voiceTrigger: {fileID: 11400000, guid: 499bddd6fd875474c8f41a809c7fc1be, type: 2}
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
+  successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
+    type: 2}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
+  player: {fileID: 0}
+  actor: {fileID: 0}
   animator: {fileID: 0}
   defaultLines:
   - What?
@@ -150,6 +153,7 @@ MonoBehaviour:
   - But she's got a sweet tooth,
   - 'so you need to make sure that the apple is nice and ripe and red. '
   - 'Otherwise she gets mad. '
+  idleTrigger: {fileID: 11400000, guid: 5a1e3dfd62759d24286dbcc3fc18d644, type: 2}
 --- !u!114 &1481699734093591367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +327,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &846758824089229776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721975481465807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 5a1e3dfd62759d24286dbcc3fc18d644, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9033009065859302599}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: SetIdleAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8100203392684350238
 GameObject:
   m_ObjectHideFlags: 0

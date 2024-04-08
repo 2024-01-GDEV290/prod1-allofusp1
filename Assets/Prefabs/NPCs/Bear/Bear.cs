@@ -24,6 +24,10 @@ public class Bear : Character
     [SerializeField] Sprite sleepingSprite;
     [SerializeField] Sprite walkingSprite;
 
+    private void Start()
+    {
+        SetIdleAnimation();
+    }
     private void LateUpdate()
     {
         if (state == BearState.walking && transform.position == stumpWaypoint.transform.position)
