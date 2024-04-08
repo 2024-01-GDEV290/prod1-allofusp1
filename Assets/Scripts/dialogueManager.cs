@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public string[] sentences; // Array of sentences to cycle through
     private int index = 0;
     public float typingSpeed = 0.02f; // Speed of typing
-    public FirstPersonController fpsController;
+    public PlayerMovement fpsController;
     
 
     void Start()

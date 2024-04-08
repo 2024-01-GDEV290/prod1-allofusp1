@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     float verticalInput;
     //public KeyCode jumpKey = KeyCode.Space;
 
+    public bool canMove = true;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -30,23 +32,27 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
-        MyInput();
-        SpeedControl();
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+            MyInput();
+            SpeedControl();
 
 
-        if (grounded)
-        {
-            rb.drag = groundDrag;
-        }
-        else
-        {
-            rb.drag = 0;
-        }
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+            }
+            else
+            {
+                rb.drag = 0;
+            }
     }
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (canMove)
+        {
+            MovePlayer();
+
+        }
     }
 
     private void MyInput()
@@ -66,11 +72,12 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         if (grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            Debug.Log("grounded");
+            rb.AddForce(moveDirection.normalized * moveSpeed * 20f, ForceMode.Force);
         }
         else if (!grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 20f * airMultiplier, ForceMode.Force);
         }
 
 
@@ -92,5 +99,9 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+    public void ToggleMovement(bool enable)
+    {
+        canMove = enable;
     }
 }
