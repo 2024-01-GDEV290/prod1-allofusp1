@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
+    public GameObject transitionCamera;
    
     
 
@@ -56,7 +58,10 @@ public class NPCInteraction : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    SceneManager.LoadScene("treeScene");
+                    transitionCamera.SetActive(true);
+                    interactionText.SetActive(false);
+                    StartCoroutine(LoadTree());
+                   // SceneManager.LoadScene("treeScene");
                 }
             }
 
@@ -113,5 +118,11 @@ public class NPCInteraction : MonoBehaviour
         }
 
     }
+    private IEnumerator LoadTree()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("treeScene");
+    }
 }
+
 
