@@ -13,6 +13,7 @@ public class SubmarineMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+		transform.position = GlobalVars.subPosition + new Vector3(-1, -2, 0);
     }
 
     // Update is called once per frame
@@ -21,6 +22,10 @@ public class SubmarineMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         transform.rotation = Quaternion.Euler(0, 0, 0);
+		
+		//Saves the last known position of the sub when it enters a cave, so that when it exits
+		//it will spawn outside the cave.
+		GlobalVars.subPosition = transform.position;
     }
 
     private void FixedUpdate()

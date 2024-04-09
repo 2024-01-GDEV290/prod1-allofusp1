@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Overlays
   - Water
   - UI
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: gameplay
     uniqueID: 461364845
+    locked: 0
+  - name: Area Overlays
+    uniqueID: 1338306471
     locked: 0
   - name: foreground
     uniqueID: 1769682757

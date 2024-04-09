@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swimSpeed: 20
-  oxyDisplay: {fileID: 0}
 --- !u!1 &2702768507720296416
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,8 +196,8 @@ Light:
   m_Color: {r: 0.87843144, g: 0.9725491, b: 0.8117648, a: 1}
   m_Intensity: 125
   m_Range: 33.53233
-  m_SpotAngle: 43.140087
-  m_InnerSpotAngle: 43.140087
+  m_SpotAngle: 67.26183
+  m_InnerSpotAngle: 67.26183
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
