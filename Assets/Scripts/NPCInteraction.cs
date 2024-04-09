@@ -10,7 +10,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
-    public GameObject transitionCamera;
+    public GameObject transitionCamera ;
    
     
 
@@ -120,7 +120,7 @@ public class NPCInteraction : MonoBehaviour
     }
     private IEnumerator LoadTree()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("treeScene");
     }
 }
