@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5938873596897570034}
   - component: {fileID: 4824862595691070447}
   - component: {fileID: -647429751932674276}
+  - component: {fileID: 2050224745837260319}
   m_Layer: 0
   m_Name: Starting Area Gate
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fab5bf9be852d4687acf96577a592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gateBoolName: GateOpen
 --- !u!114 &-647429751932674276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +82,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &2050224745837260319
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559058271627364787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 642ab2d7ec73bb74088cf64eadcbad7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1271486502894400969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 5732902698747669045, guid: 30893fbc30f61464684d20a4030e74a3,
         type: 3}
       propertyPath: m_Name
-      value: Tree 3 Variant (13)
+      value: Tree 3 Variant L3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -215,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 2262741604922269537, guid: d675e5f4df85dec47a713838d9fd7e51,
         type: 3}
       propertyPath: m_Name
-      value: Tree 1 Variant (13)
+      value: Tree 1 Variant R2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -289,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 5732902698747669045, guid: 30893fbc30f61464684d20a4030e74a3,
         type: 3}
       propertyPath: m_Name
-      value: Tree 3 Variant (12)
+      value: Tree 3 Variant R3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -363,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 2262741604922269537, guid: d675e5f4df85dec47a713838d9fd7e51,
         type: 3}
       propertyPath: m_Name
-      value: Tree 1 Variant (10)
+      value: Tree 1 Variant L1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -437,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 2262741604922269537, guid: d675e5f4df85dec47a713838d9fd7e51,
         type: 3}
       propertyPath: m_Name
-      value: Tree 1 Variant (11)
+      value: Tree 1 Variant R1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -511,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 2262741604922269537, guid: d675e5f4df85dec47a713838d9fd7e51,
         type: 3}
       propertyPath: m_Name
-      value: Tree 1 Variant (12)
+      value: Tree 1 Variant L2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -585,7 +608,7 @@ PrefabInstance:
     - target: {fileID: 5732902698747669045, guid: 30893fbc30f61464684d20a4030e74a3,
         type: 3}
       propertyPath: m_Name
-      value: Tree 3 Variant (11)
+      value: Tree 3 Variant R4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
