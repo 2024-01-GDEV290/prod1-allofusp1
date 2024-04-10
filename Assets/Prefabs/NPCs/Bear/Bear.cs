@@ -4,45 +4,42 @@ using UnityEngine;
 
 public enum BearState
 {
-    calm,
-    angry,
-    sleeping,
-    walking,
+    territorial,
+    satisfied,
 }
 public class Bear : Character
 {
     [SerializeField] List<Item> inventory;
-    [TextArea][SerializeField] string satisfiedDialogue;
+    [SerializeField] string[] blockingLines;
+    [SerializeField] string[] satisfiedLines;
     [SerializeField] GameEventTrigger openGateTrigger;
     [SerializeField] GameObject stumpWaypoint;
     [SerializeField] AudioClip[] calmInteractSounds;
-
-    [Header("Sprite Display States")]
     [SerializeField] BearState state;
-    [SerializeField] Sprite calmSprite;
-    [SerializeField] Sprite angrySprite;
-    [SerializeField] Sprite sleepingSprite;
-    [SerializeField] Sprite walkingSprite;
 
     private void Start()
     {
         SetIdleAnimation();
+        state = BearState.territorial;
     }
-    private void LateUpdate()
-    {
-        if (state == BearState.walking && transform.position == stumpWaypoint.transform.position)
-        {
-            state = BearState.calm;            
-        }
-    }
+
 
     public override void CharacterBehavior()
     {
-        Debug.Log(defaultDialogue); 
+        if (state == BearState.territorial)
+        {
+            SetAnimation("angry");
+            InitiateDialogue(blockingLines, new List<GameEventTrigger> { idleTrigger });
+        } else if (state == BearState.satisfied)
+        {
+            InitiateDialogue(satisfiedLines, new List<GameEventTrigger> { idleTrigger });
+        }
+
     }
-    public void LeaveCave()
+    public void AllowPassage()
     {
-        Debug.Log(satisfiedDialogue);
+        SetAnimation("walking");
+        InitiateDialogue(satisfiedLines, new List<GameEventTrigger> { idleTrigger });
         actor.MoveToWaypoint(stumpWaypoint.transform);
         openGateTrigger.Raise();
     }

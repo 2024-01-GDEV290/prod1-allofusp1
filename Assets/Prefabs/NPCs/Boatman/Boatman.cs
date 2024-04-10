@@ -21,7 +21,7 @@ public class Boatman : Character
     BoatmanState state;
     private bool interactionComplete = false;
     [SerializeField] int[] highTides;
-    [SerializeField] GameEventTrigger idleTrigger;
+
     [SerializeField] GameEventTrigger crossLakeTrigger;
 
 

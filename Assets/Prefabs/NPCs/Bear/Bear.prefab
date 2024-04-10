@@ -87,6 +87,9 @@ GameObject:
   - component: {fileID: 8004319431673622927}
   - component: {fileID: 6904285415057161273}
   - component: {fileID: 2384006963277512879}
+  - component: {fileID: 7142817606812258358}
+  - component: {fileID: 3608789292009000711}
+  - component: {fileID: 2331980254897727463}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -197,30 +200,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDialogue: RWAAAAARRRGH.
-  voice: {fileID: 0}
+  voice: {fileID: 8300000, guid: 1e042582ce79baf45a648eff70aa2d67, type: 3}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
-  voiceTrigger: {fileID: 0}
+  voiceTrigger: {fileID: 11400000, guid: 1688492bc6aa6b7468fd2ad6c7dff9c1, type: 2}
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
-  successSoundTrigger: {fileID: 0}
+  successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
+    type: 2}
+  idleTrigger: {fileID: 11400000, guid: 39c069f9b0909a640b3aa907766ed7fb, type: 2}
   spriteRenderer: {fileID: 0}
   audioSource: {fileID: 0}
   player: {fileID: 0}
   actor: {fileID: 0}
   animator: {fileID: 0}
   inventory: []
-  satisfiedDialogue: Rwaaaargh. ^_^
+  blockingLines:
+  - RWAAAAAAAAAWRRRRRGH!
+  satisfiedLines:
+  - Rwagh. ^_^
   openGateTrigger: {fileID: 11400000, guid: 58b4f0433925c3d44bf9f1ba426e01a7, type: 2}
   stumpWaypoint: {fileID: 0}
   calmInteractSounds:
   - {fileID: 8300000, guid: 940cb819a32291042a6704c6b9b6530f, type: 3}
   - {fileID: 8300000, guid: 02f18ae906a2f9346af0bb9dbb2971ea, type: 3}
   state: 0
-  calmSprite: {fileID: 0}
-  angrySprite: {fileID: 0}
-  sleepingSprite: {fileID: 0}
-  walkingSprite: {fileID: 0}
 --- !u!114 &8004319431673622927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +370,87 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7142817606812258358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222312825732530144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: b88d54e7cdf4f884ea618c180f7eee33, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1002621646786397270}
+        m_TargetAssemblyTypeName: Bear, Assembly-CSharp
+        m_MethodName: AllowPassage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3608789292009000711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222312825732530144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 39c069f9b0909a640b3aa907766ed7fb, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1002621646786397270}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: SetIdleAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2331980254897727463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222312825732530144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: 1688492bc6aa6b7468fd2ad6c7dff9c1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1002621646786397270}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

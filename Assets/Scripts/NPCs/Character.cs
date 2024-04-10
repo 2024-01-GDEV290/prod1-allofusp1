@@ -14,7 +14,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected int voiceFrequency = 3;
     [SerializeField] protected float voiceUpperPitchLimit = 1.2f;
     [SerializeField] protected float voiceLowerPitchLimit = .8f;
-    [SerializeField] GameEventTrigger successSoundTrigger;
+    [SerializeField] protected GameEventTrigger successSoundTrigger;
+    [SerializeField] protected GameEventTrigger idleTrigger;
 
     [Header("Set Dynamically")]
     [SerializeField] protected SpriteRenderer spriteRenderer;
@@ -34,6 +35,9 @@ public abstract class Character : MonoBehaviour
 
     protected void InitiateDialogue(string[] lines, List<GameEventTrigger> completionTriggers = null)
     {
+        audioSource.pitch = 1;
+        audioSource.PlayOneShot(voice);
+        voiceCounter = 0;
         Dialogue.lines = lines;
         if (voiceTrigger != null) { Dialogue.voiceTrigger = voiceTrigger; }
         if (completionTriggers != null) Dialogue.completionTriggers = completionTriggers;
@@ -42,6 +46,7 @@ public abstract class Character : MonoBehaviour
 
     public void Speak()
     {
+
         if(voiceCounter % voiceFrequency == 0)
         {
             audioSource.pitch = Random.Range(voiceLowerPitchLimit, voiceUpperPitchLimit);

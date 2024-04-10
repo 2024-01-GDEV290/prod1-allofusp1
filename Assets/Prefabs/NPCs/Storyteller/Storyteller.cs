@@ -18,9 +18,7 @@ public class Storyteller : Character
     [SerializeField] int nightStartTime = 18;
     [SerializeField] int nightEndTime = 5;
     private bool interactionComplete = false;
-    GameEventListener idleListener;
     [SerializeField] GameEventTrigger playFluteTrigger;
-    [SerializeField] GameEventTrigger idleTrigger;
     [SerializeField] GameEventTrigger openGateTrigger;
 
 

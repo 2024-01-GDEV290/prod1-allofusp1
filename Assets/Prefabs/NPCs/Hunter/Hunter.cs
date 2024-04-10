@@ -5,7 +5,6 @@ using UnityEngine;
 public class Hunter : Character
 {
     [SerializeField] string[] defaultLines;
-    [SerializeField] GameEventTrigger idleTrigger;
 
     private void Start()
     {
