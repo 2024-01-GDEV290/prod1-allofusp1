@@ -62,7 +62,7 @@ public class InputManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        motor.ProcessLook(onFoot.Look.ReadValue<Vector2>());
+        motor.ProcessLook(onFoot.Look.ReadValue<Vector2>());    
     }
 
     private void OnEnable()
