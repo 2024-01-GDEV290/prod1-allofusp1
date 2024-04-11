@@ -34,6 +34,8 @@ public class Oar : MonoBehaviour
             {
                 gameObject.layer = 0;
             }
+
+            i++;
         }
     }
 }
