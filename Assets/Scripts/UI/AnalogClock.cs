@@ -14,9 +14,11 @@ public class AnalogClock : MonoBehaviour
 
     public void UpdateClock()
     {
-        float currentHourAngle = this.GetComponent<RectTransform>().localEulerAngles.y;
-        float newHourAngle = -360 * WindingTime.S.hours / 12f;
-        if (newHourAngle < -720) { newHourAngle += 720; }
+        float currentHourAngle = this.GetComponent<RectTransform>().localEulerAngles.z;
+        int newHour = WindingTime.S.hours;
+        if (newHour >= 12) { newHour -= 12; }
+        float newHourAngle = -360 * newHour / 12f + 360;
+        //if (newHourAngle <= -360) { newHourAngle += 360; }
 
         StartCoroutine(MoveHrHand(currentHourAngle, newHourAngle));
         
@@ -25,7 +27,7 @@ public class AnalogClock : MonoBehaviour
 
     IEnumerator MoveHrHand(float currentHourAngle, float newHourAngle)
     {
-        float angleDifference = newHourAngle - currentHourAngle + 360;
+        float angleDifference = newHourAngle - currentHourAngle;
 
         for (int i = 0; i > angleDifference; i--)
         {
