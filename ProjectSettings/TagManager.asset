@@ -6,6 +6,8 @@ TagManager:
   tags:
   - O2Tank
   - Flashlight
+  - Map Frag
+  - Ship log
   layers:
   - Default
   - TransparentFX
