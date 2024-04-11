@@ -7345,7 +7345,7 @@ PrefabInstance:
     - target: {fileID: 146867393016906476, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 146867393016906476, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
