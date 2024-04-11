@@ -4202,12 +4202,37 @@ PrefabInstance:
     - target: {fileID: 6676932215695703879, guid: c5a13989c997d094bb70fa9fb284b0d6,
         type: 3}
       propertyPath: hrHandDelay
-      value: 0.001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925232006443789949, guid: c5a13989c997d094bb70fa9fb284b0d6,
         type: 3}
       propertyPath: textSpeed
       value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418974522451351225, guid: c5a13989c997d094bb70fa9fb284b0d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.99984777
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418974522451351225, guid: c5a13989c997d094bb70fa9fb284b0d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418974522451351225, guid: c5a13989c997d094bb70fa9fb284b0d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418974522451351225, guid: c5a13989c997d094bb70fa9fb284b0d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.017452639
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418974522451351225, guid: c5a13989c997d094bb70fa9fb284b0d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -358
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
