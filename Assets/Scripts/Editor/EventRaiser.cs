@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 [CustomEditor(typeof(GameEventTrigger))]
-public class EventRaiser : Editor
+public class EventRaiser : UnityEditor.Editor
 {
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
+        base.DrawDefaultInspector();
 
         GameEventTrigger eventTrig = (GameEventTrigger)target;
 
