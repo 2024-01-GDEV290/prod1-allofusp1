@@ -5396,6 +5396,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 940938186174898586, guid: d118758e9e0bc0247bbd20e5e90f50cc,
+        type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4336185966699387774, guid: d118758e9e0bc0247bbd20e5e90f50cc,
         type: 3}
       propertyPath: questText
