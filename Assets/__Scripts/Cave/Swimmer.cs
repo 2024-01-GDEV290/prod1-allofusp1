@@ -14,6 +14,7 @@ public class Swimmer : MonoBehaviour
 	private float _sideSwim = 0;
 	private float _swimForward = 0;
 	private float _roll = 0;
+	private float _swimBackward = 0;
 	
 	private Rigidbody rb;
 
@@ -31,15 +32,19 @@ public class Swimmer : MonoBehaviour
 		_sideSwim = Input.GetAxis("Swim Left/Right");
 		_swimForward = Input.GetAxis("Swim Forward") * _swimSpeed;
 		_roll = Input.GetAxis("Barrel Roll Left/Right");
-		swim(_verticalSwim, _sideSwim, _swimForward, _roll);
+		swim(_verticalSwim, _sideSwim, _swimForward, _roll, _swimBackward);
+		_swimBackward = Input.GetAxis("Swim Backward") * _swimSpeed;
 		
 		
     }
 	
-	private void swim(float verticalSwimPower, float sideSwimPower, float swimForwardPower, float rollPower)
+	private void swim(float verticalSwimPower, float sideSwimPower, float swimForwardPower, float rollPower, float swimBackwardPower)
 	{
 		// Pushes the diver forward
 		rb.AddRelativeForce(swimForwardPower * Time.deltaTime * 10, 0, 0);
+
+		// pushes the diver backward
+		rb.AddRelativeForce(swimBackwardPower * Time.deltaTime * -10, 0, 0);
 		
 		// Rotates and rolls the diver
 		rb.AddRelativeTorque(-15f * Time.deltaTime * rollPower, sideSwimPower * Time.deltaTime * 100, verticalSwimPower * Time.deltaTime * 100);

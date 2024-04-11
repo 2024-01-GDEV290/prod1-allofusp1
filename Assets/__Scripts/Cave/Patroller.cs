@@ -1,43 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Patroller : MonoBehaviour
 {
+    NavMeshAgent agent;
     public Transform[] waypoints;
-    public int speed;
-    private int waypointIndex;
-    private float dist;
+    int waypointIndex;
+    Vector3 target;
 
     void Start()
     {
-        waypointIndex = 0;
-        transform.LookAt(waypoints[waypointIndex].position);
+        agent = GetComponent<NavMeshAgent>();
+        UpdateDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
-        if (dist < 1f)
+        if (Vector3.Distance(transform.position, target) < 1)
         {
-            IncreaseIndex();
+            IterateWaypointIndex();
+            UpdateDestination();
         }
-        Patrol();
     }
 
-    void Patrol()
+    void UpdateDestination()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        target = waypoints[waypointIndex].position;
+        agent.SetDestination(target);
     }
 
-    void IncreaseIndex()
+    void IterateWaypointIndex()
     {
         waypointIndex++;
-        if (waypointIndex >= waypoints.Length)
+        if (waypointIndex ==  waypoints.Length)
         {
             waypointIndex = 0;
         }
-        transform.LookAt(waypoints[waypointIndex].position);
     }
+
 }
