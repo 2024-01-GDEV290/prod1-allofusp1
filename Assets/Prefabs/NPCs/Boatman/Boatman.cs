@@ -71,6 +71,7 @@ public class Boatman : Character
     {
         if (state == BoatmanState.readyToDepart || state == BoatmanState.waitingToDepart)
         {
+            Debug.Log("ReadyCheck");
             int currentTime = CheckTime();
             Debug.Log(currentTime);
             if (highTides.Contains(currentTime))

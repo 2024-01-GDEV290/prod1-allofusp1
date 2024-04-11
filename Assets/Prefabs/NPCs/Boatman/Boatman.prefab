@@ -279,7 +279,7 @@ MonoBehaviour:
   - Come back at high tide, and I'll take ye right across, matey.
   departingLines:
   - Let's set sail, matey!
-  highTides: 00000000
+  highTides: 0800000014000000
   desiredItem: {fileID: 11400000, guid: 86570c3c30252ae40b712bfb60cf8941, type: 2}
   crossLakeTrigger: {fileID: 11400000, guid: 1e10f1af59de50e4a8d44518d89bed1c, type: 2}
   missingOar: {fileID: 63223551229387089}
