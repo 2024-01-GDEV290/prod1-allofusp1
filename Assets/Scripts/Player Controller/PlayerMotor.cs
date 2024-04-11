@@ -151,7 +151,7 @@ public class PlayerMotor : MonoBehaviour
         else
         {
             DropItem();
-            currentlyHeldItem = targetItem.transform.gameObject;
+            currentlyHeldItem = targetItem.gameObject;
             targetItem.Collect(heldItemAnchor);
         }
     }

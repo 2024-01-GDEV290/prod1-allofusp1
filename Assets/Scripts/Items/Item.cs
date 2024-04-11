@@ -9,4 +9,7 @@ public class Item : ScriptableObject
     public GameObject itemPrefab;
     public Sprite itemIcon;
     public bool held = false;
+    public Vector3 heldPosition;
+    public Vector3 heldRotation;
+    public Vector3 heldScale;
 }

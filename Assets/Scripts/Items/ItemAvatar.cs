@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,9 @@ public class ItemAvatar : MonoBehaviour
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.SetParent(newParentTransform, false);
-            transform.localPosition = Vector3.zero;
+            transform.localPosition = item.heldPosition;
+            transform.localRotation = Quaternion.Euler(item.heldRotation.x,item.heldRotation.y,item.heldRotation.z);
+            transform.localScale = item.heldScale;
         }
         else
         {

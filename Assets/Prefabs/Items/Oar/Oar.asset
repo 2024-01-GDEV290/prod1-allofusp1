@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d6e50b2ba189541b4a2ef2747e23be, type: 3}
-  m_Name: Apple
+  m_Name: Oar
   m_EditorClassIdentifier: 
-  itemName: Apple
-  itemPrefab: {fileID: 697316840801825811, guid: 5e33e77848ac9cb44bc42dca9f3dedc4,
+  itemName: Oar
+  itemPrefab: {fileID: 3370518300404275113, guid: 297d05545c0f371438dd8a9d5eace8a5,
     type: 3}
-  itemIcon: {fileID: 21300000, guid: 7dbe318733a2bbe4b9e175004c3b296d, type: 3}
+  itemIcon: {fileID: 0}
   held: 1
   heldPosition: {x: 0, y: 0, z: 0}
-  heldRotation: {x: 0, y: 0, z: 0}
-  heldScale: {x: 1, y: 1, z: 1}
+  heldRotation: {x: -90, y: 0, z: 0}
+  heldScale: {x: 100, y: 100, z: 100}

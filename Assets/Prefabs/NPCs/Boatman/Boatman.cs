@@ -13,21 +13,27 @@ public enum BoatmanState
 }
 public class Boatman : Character
 {
+    [Header("Set In Inspector")]
     [SerializeField] string[] interactionCompleteLines;
     [SerializeField] string[] missingOarLines;
     [SerializeField] string[] receivedOarLines;
     [SerializeField] string[] waitingLines;
     [SerializeField] string[] departingLines;
-    BoatmanState state;
-    private bool interactionComplete = false;
     [SerializeField] int[] highTides;
-
+    [SerializeField] Item desiredItem;
     [SerializeField] GameEventTrigger crossLakeTrigger;
+    [SerializeField] GameObject missingOar;
 
+
+    [Header("Set Dynamically")]
+    [SerializeField] BoatmanState state;
+    private bool interactionComplete = false;
+    private Tide tide;
 
 
     private void Start()
     {
+        tide = GameObject.Find("Lake").GetComponent<Tide>();
         state = BoatmanState.missingOar;
         SetAnimation("idle");
     }
@@ -40,14 +46,15 @@ public class Boatman : Character
         }
         else if(state == BoatmanState.missingOar)
         {
-            if (player.currentlyHeldItem != null) // Replace this with a reference to the oar prefab later
+            if (player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem) // Replace this with a reference to the oar prefab later
             {
+                Destroy(player.currentlyHeldItem);
+                missingOar.SetActive(true);
                 /*Receive oar*/
                 InitiateDialogue(receivedOarLines, new List<GameEventTrigger>() { idleTrigger } );
                 state = BoatmanState.waitingToDepart;
             } else
             {
-
                 InitiateDialogue(missingOarLines, new List<GameEventTrigger>() { idleTrigger });
             }
         } else if(state == BoatmanState.waitingToDepart)
@@ -65,13 +72,17 @@ public class Boatman : Character
         if (state == BoatmanState.readyToDepart || state == BoatmanState.waitingToDepart)
         {
             int currentTime = CheckTime();
-            if (highTides.Contains(currentTime)){
+            Debug.Log(currentTime);
+            if (highTides.Contains(currentTime))
+            {
                 state = BoatmanState.readyToDepart;
             }
             else
             {
                 state = BoatmanState.waitingToDepart;
             }
+
+
         }
     }
 
