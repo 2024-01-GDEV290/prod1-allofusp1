@@ -5536,6 +5536,46 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2086905855}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142501353785239095, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+        type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4181435356866449559, guid: 468deb39a692c3e4bb1f8907ae2ccade,
         type: 3}
       propertyPath: m_Sprite
@@ -5610,6 +5650,12 @@ PrefabInstance:
 --- !u!4 &2086905854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5179775005938097069, guid: 468deb39a692c3e4bb1f8907ae2ccade,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086905853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2086905855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6215469085680289441, guid: 468deb39a692c3e4bb1f8907ae2ccade,
     type: 3}
   m_PrefabInstance: {fileID: 2086905853}
   m_PrefabAsset: {fileID: 0}
