@@ -46,7 +46,7 @@ public class Boatman : Character
         }
         else if(state == BoatmanState.missingOar)
         {
-            if (player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem) // Replace this with a reference to the oar prefab later
+            if (player.currentlyHeldItem && player.currentlyHeldItem.GetComponent<ItemAvatar>().item == desiredItem)
             {
                 Destroy(player.currentlyHeldItem);
                 missingOar.SetActive(true);
