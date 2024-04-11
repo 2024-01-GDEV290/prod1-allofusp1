@@ -13,7 +13,7 @@ public class SubmarineMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-		transform.position = GlobalVars.subPosition + new Vector3(-1, -2, 0);
+		transform.position = GlobalVars.subPosition + new Vector3(0, -1.5f, 0);
     }
 
     // Update is called once per frame
