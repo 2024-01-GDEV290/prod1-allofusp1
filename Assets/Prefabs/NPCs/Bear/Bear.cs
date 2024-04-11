@@ -39,7 +39,8 @@ public class Bear : Character
     public void AllowPassage()
     {
         SetAnimation("walking");
-        InitiateDialogue(satisfiedLines, new List<GameEventTrigger> { idleTrigger });
+        InitiateDialogue(satisfiedLines);
+        Invoke(nameof(SetIdleAnimation), 3);
         actor.MoveToWaypoint(stumpWaypoint.transform);
         openGateTrigger.Raise();
     }
