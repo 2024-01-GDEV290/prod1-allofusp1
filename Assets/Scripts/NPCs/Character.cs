@@ -5,8 +5,6 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     [Header("Set In Inspector")]
-    [TextArea]
-    [SerializeField] protected string defaultDialogue;
     [SerializeField] protected AudioClip voice;
     [SerializeField] protected GameEventTrigger nextLineTrigger;
     [SerializeField] protected GameEventTrigger voiceTrigger;
@@ -16,12 +14,12 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected GameEventTrigger successSoundTrigger;
     [SerializeField] protected GameEventTrigger idleTrigger;
 
-    [Header("Set Dynamically")]
-    [SerializeField] protected SpriteRenderer spriteRenderer;
-    [SerializeField] protected AudioSource audioSource;
-    [SerializeField] protected PlayerMotor player;
-    [SerializeField] protected Actor actor;
-    [SerializeField] protected Animator animator;
+
+    protected SpriteRenderer spriteRenderer;
+    protected AudioSource audioSource;
+    protected PlayerMotor player;
+    protected Actor actor;
+    protected Animator animator;
     private int voiceCounter = 0;
     private void Awake()
     {
