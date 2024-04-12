@@ -274,7 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d2a9c2ef0b153418aea912c9b979a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDialogue: 
   voice: {fileID: 8300000, guid: bc72aa7c144842243a46f2c877e761f8, type: 3}
   nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
   voiceTrigger: {fileID: 11400000, guid: 886e15e5fe1ea7146875826db93d73cf, type: 2}
@@ -284,11 +283,6 @@ MonoBehaviour:
   successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
     type: 2}
   idleTrigger: {fileID: 11400000, guid: 908fc05dd3bb71e43a1ae71fb52723ea, type: 2}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
-  player: {fileID: 0}
-  actor: {fileID: 0}
-  animator: {fileID: 0}
   interactionCompleteLines:
   - Aha!
   - Well, I hope the path ahead is a little clearer for you now.
@@ -431,6 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5179775005938097069}
   - component: {fileID: 5218198306601905384}
+  - component: {fileID: 3268098458632876519}
   m_Layer: 6
   m_Name: Storyteller
   m_TagString: Untagged
@@ -470,6 +465,28 @@ MonoBehaviour:
   behaviorTrigger: {fileID: 11400000, guid: 306d27ae495bbf0408dc0e4ab53b7fb7, type: 2}
   characterBody: {fileID: 6204721975481465807}
   agent: {fileID: 0}
+--- !u!195 &3268098458632876519
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100203392684350238}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: -0.4
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &4988456526031951383
 PrefabInstance:
   m_ObjectHideFlags: 0
