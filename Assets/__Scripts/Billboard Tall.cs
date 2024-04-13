@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Billbord : MonoBehaviour
 {
-    Camera mainCamera;
+    [SerializeField] Camera mainCamera;
 
     void OnEnable()
     {
@@ -16,7 +16,7 @@ public class Billbord : MonoBehaviour
 
     void Start()
     {
-        mainCamera = Camera.main;
+        //mainCamera = Camera.main;
     }
 
     void LateUpdate()

@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: d379019c6115766479ff7ed9d59ce7ad
+guid: 4ae38374b29abb24bb95a6d18c24cd11
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ground054
-    second: {fileID: 2100000, guid: b4e1f9a10f75a8f40983c8728570c033, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
