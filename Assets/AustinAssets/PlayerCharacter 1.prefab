@@ -226,6 +226,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   camera: {fileID: 2379354989163667157}
+  canMove: 1
 --- !u!136 &789793707606638975
 CapsuleCollider:
   m_ObjectHideFlags: 0
