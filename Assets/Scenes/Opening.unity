@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4725089}
   - component: {fileID: 4725088}
   m_Layer: 0
-  m_Name: Timeline
+  m_Name: Cutscene Director
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,8 @@ PlayableDirector:
     value: {fileID: 1139985977}
   - key: {fileID: -8498536461207230822, guid: 0546cb6062295e7419d62f27d1d3093a, type: 2}
     value: {fileID: 1322121325}
+  - key: {fileID: -4216563273810388825, guid: 0546cb6062295e7419d62f27d1d3093a, type: 2}
+    value: {fileID: 921899426}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &4725089
@@ -482,6 +484,51 @@ Transform:
   - {fileID: 1544891293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 31.744}
+--- !u!1 &921899426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921899428}
+  - component: {fileID: 921899427}
+  m_Layer: 0
+  m_Name: CutsceneComplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &921899427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921899426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbaba6460951ce4abcc1c946de9bbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneTrigger: {fileID: 11400000, guid: 1f1462932d4a6d34397535a55d6801fe, type: 2}
+--- !u!4 &921899428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921899426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.167244, y: -67.504944, z: 85.133896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &942425665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,50 +612,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de0575d6a0aa714fbf8cf34470df3de, type: 3}
---- !u!1 &984669268
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 984669270}
-  - component: {fileID: 984669269}
-  m_Layer: 0
-  m_Name: CutsceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &984669269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984669268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137e160ac25e3c04cbf490036d3c036f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &984669270
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984669268}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400.5, y: 225.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1097058928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,15 +1387,15 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 4725089}
   - {fileID: 3936338619945655911}
   - {fileID: 1139985975}
   - {fileID: 1097058930}
   - {fileID: 189853048}
-  - {fileID: 984669270}
-  - {fileID: 4725089}
   - {fileID: 242961931}
   - {fileID: 8504787427652481017}
   - {fileID: 294434234}
   - {fileID: 7091902644609083085}
   - {fileID: 4706965264439255119}
   - {fileID: 942425665}
+  - {fileID: 921899428}
