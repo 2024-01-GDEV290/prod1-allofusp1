@@ -10,6 +10,7 @@ public class Bird : Character
     
     public override void CharacterBehavior()
     {
+        SetAnimation("flap");
         embark.Raise();
     }
 }

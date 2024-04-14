@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7325145118912751949}
   - component: {fileID: 4310343801552131580}
   - component: {fileID: 1858340781150172852}
-  - component: {fileID: 9012173420782239340}
+  - component: {fileID: 2411407801993814421}
+  - component: {fileID: 5183212826075406180}
+  - component: {fileID: 9183229460352094828}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -74,37 +76,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d7581b7cc02c4408d1eb3ecc170e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDialogue: 
   voice: {fileID: 0}
-  nextLineTrigger: {fileID: 0}
-  voiceTrigger: {fileID: 0}
+  nextLineTrigger: {fileID: 11400000, guid: 96db83474e6be0f4b9128ba2203b9e6c, type: 2}
+  voiceTrigger: {fileID: 11400000, guid: bde957d5458d8ed49855cca81317db8d, type: 2}
   voiceFrequency: 3
   voiceUpperPitchLimit: 1.2
   voiceLowerPitchLimit: 0.8
-  successSoundTrigger: {fileID: 0}
-  idleTrigger: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
-  player: {fileID: 0}
-  actor: {fileID: 0}
-  animator: {fileID: 0}
+  successSoundTrigger: {fileID: 11400000, guid: f121f9b4b3fc1a249a363679a3c24874,
+    type: 2}
+  idleTrigger: {fileID: 11400000, guid: 0075438491901464bb1ac0f44898fe3b, type: 2}
   embark: {fileID: 11400000, guid: 2627b5ed117e5e840a1e72c42e20755c, type: 2}
---- !u!114 &9012173420782239340
-MonoBehaviour:
+--- !u!212 &2411407801993814421
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2973296717293076312}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24df58a6a768c2a4bb1cdcf71bb9bde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 11400000, guid: 2627b5ed117e5e840a1e72c42e20755c, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1212802797, guid: db294c94e873baa4eb5bbed9d3ba8143, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.8885713, y: 3.18}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &5183212826075406180
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973296717293076312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c487230adaaf2c4588afd6503ebd45a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &9183229460352094828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973296717293076312}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8885713, y: 3.18, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4126473323665116836
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +191,7 @@ GameObject:
   - component: {fileID: 6184197104114488814}
   - component: {fileID: 1283985951090140307}
   - component: {fileID: 4743762828003579835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: 
-  behaviorTrigger: {fileID: 11400000, guid: 2627b5ed117e5e840a1e72c42e20755c, type: 2}
+  behaviorTrigger: {fileID: 11400000, guid: 0279dfc32e1e3aa4a8a024cc850456f0, type: 2}
   characterBody: {fileID: 2973296717293076312}
   agent: {fileID: 0}
 --- !u!195 &4743762828003579835
@@ -175,7 +250,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &6595613112468353354
@@ -190,6 +265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Snooze
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403793723178373302, guid: 3be2a6d026ad0294f9144b4ef320db29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6581951823663523538, guid: 3be2a6d026ad0294f9144b4ef320db29,
         type: 3}

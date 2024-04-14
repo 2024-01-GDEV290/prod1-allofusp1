@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TIMELY-WHEELS.unity
     guid: 06c5d7cb48f1e204082a56a41c8e1e98
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 0764ed01725773343b8c7c52bf9e875f
   m_configObjects: {}
