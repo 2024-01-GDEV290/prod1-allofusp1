@@ -6,6 +6,7 @@ public class BoatRide : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private string boatAnimBoolName;
+    [SerializeField] Transform playerAnchor;
 
     public GameEventTrigger sailStart;
     public GameEventTrigger sailEnd;
@@ -20,7 +21,9 @@ public class BoatRide : MonoBehaviour
 
     public void SetSail()
     {
-        player.transform.SetParent(transform, true);
+        player.transform.SetParent(playerAnchor, true);
+        player.transform.position = playerAnchor.position;
+        player.GetComponent<CharacterController>().enabled = false;
         anim.SetBool(boatAnimBoolName, true);
         sailStart.Raise();
         Invoke("Disembark", animationTime);
@@ -29,5 +32,7 @@ public class BoatRide : MonoBehaviour
     private void Disembark()
     {
         sailEnd.Raise();
+        player.GetComponent<CharacterController>().enabled = true;
+        player.transform.SetParent (null);
     }
 }
