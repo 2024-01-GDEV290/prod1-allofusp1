@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6761325205803484485}
   - component: {fileID: 1283458440028542080}
+  - component: {fileID: 3979194331873465879}
   m_Layer: 0
   m_Name: Coral_reef_yellow
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3979194331873465879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2775607009277065840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c07ace473c5bb341b72c857c1ff1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
