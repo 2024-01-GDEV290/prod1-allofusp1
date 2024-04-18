@@ -13840,7 +13840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055865948}
   m_Layer: 0
-  m_Name: BillBoards
+  m_Name: mistakes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
