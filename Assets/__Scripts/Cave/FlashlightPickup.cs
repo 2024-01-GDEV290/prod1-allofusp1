@@ -17,11 +17,21 @@ public class Flashlight : MonoBehaviour
 		consoleDisplay.text = "";
 		
 		mesh = GetComponent<MeshRenderer>();
+
+		if (GlobalVars.hasFlashlight == true)
+		{
+			FlashlightCollected();
+		}
 	}
 	
     private void OnTriggerEnter(Collider swimmer)
 	{
 		GlobalVars.hasFlashlight = true;
+		FlashlightCollected();
+	}
+
+	private void FlashlightCollected()
+	{
 		swimmerLight.intensity = 125;
 		consoleDisplay.text = "[SUB -> DIVER] Light source acquired. Return to submersible for further directions";
 		mesh.enabled = false;

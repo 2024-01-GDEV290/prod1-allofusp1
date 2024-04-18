@@ -85,11 +85,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c48bed5af6b46143bfbef67a2cbb208,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6720611383200993348}
+      addedObject: {fileID: 22327405985579128}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c48bed5af6b46143bfbef67a2cbb208,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7351812259719199865}
+      addedObject: {fileID: 6720611383200993348}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c48bed5af6b46143bfbef67a2cbb208,
         type: 3}
       insertIndex: -1
@@ -101,6 +101,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 45475326423601184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &22327405985579128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891965890408164721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f174e0924e4c2341bebf5d6f7b28091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swimmer: {fileID: 0}
+  mapDisplay: {fileID: 0}
+  returnToSubDisplay: {fileID: 0}
 --- !u!65 &6720611383200993348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,21 +137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010968625, y: 0.24683242, z: 0.015016924}
   m_Center: {x: 0.0015621172, y: -0.00024345078, z: 0.0012534148}
---- !u!114 &7351812259719199865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891965890408164721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439dc21d6b0917e4dad8da83d737bc50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swimmer: {fileID: 0}
-  mapDisplay: {fileID: 0}
-  returnToSubDisplay: {fileID: 0}
 --- !u!95 &6700717350150148867
 Animator:
   serializedVersion: 5

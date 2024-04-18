@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c259927b52d3be04c8289ffeb760b061,
         type: 3}
       propertyPath: m_Name
-      value: map3 Variant
+      value: map3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85,11 +85,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c259927b52d3be04c8289ffeb760b061,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5324086343715330071}
+      addedObject: {fileID: 5970901738594258908}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c259927b52d3be04c8289ffeb760b061,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1056171912362810248}
+      addedObject: {fileID: 5324086343715330071}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c259927b52d3be04c8289ffeb760b061,
         type: 3}
       insertIndex: -1
@@ -101,6 +101,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3274218153495616517}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5970901738594258908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427780780398797140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c85b5d20765d2d418ee38fae53e7ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swimmer: {fileID: 0}
+  mapDisplay: {fileID: 0}
+  returnToSubDisplay: {fileID: 0}
 --- !u!65 &5324086343715330071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,21 +137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.015987456, y: 0.22665797, z: 0.014343316}
   m_Center: {x: 0.00018877351, y: 0.008102675, z: -0.0012658789}
---- !u!114 &1056171912362810248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2427780780398797140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439dc21d6b0917e4dad8da83d737bc50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swimmer: {fileID: 0}
-  mapDisplay: {fileID: 0}
-  returnToSubDisplay: {fileID: 0}
 --- !u!95 &4207834029964125556
 Animator:
   serializedVersion: 5
