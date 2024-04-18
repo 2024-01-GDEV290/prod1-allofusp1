@@ -11,6 +11,7 @@ public class NPCInteraction : MonoBehaviour
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
     public GameObject transitionCamera ;
+    private bool readOnce = false;
    
     
 
@@ -18,6 +19,7 @@ public class NPCInteraction : MonoBehaviour
     {
         dialogueTrigger.SetActive(false);
         interactionText.SetActive(false);
+        
 
     }
 
@@ -108,6 +110,24 @@ public class NPCInteraction : MonoBehaviour
                 }
 
             }
+            if(hit.collider.CompareTag("note"))
+            {
+                if (readOnce == false)
+                {
+                    interactionText.SetActive(true);
+                    Debug.Log("Hit: " + hit.collider.name);
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    dialogueTrigger.SetActive(true);
+                    fpsController.ToggleMovement(false);
+                    readOnce = true;
+                    transitionCamera.SetActive(true);
+                    interactionText.SetActive(false);
+
+                }
+
+            }
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
@@ -123,6 +143,7 @@ public class NPCInteraction : MonoBehaviour
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("treeScene");
     }
+    
 }
 
 
