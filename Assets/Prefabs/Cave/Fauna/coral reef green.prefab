@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 424266207444673028}
   - component: {fileID: 4878301615326598132}
   m_Layer: 0
-  m_Name: Coral_reef_green
+  m_Name: coral reef green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
