@@ -19,7 +19,7 @@ public class Patroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < 1)
+        if (Vector3.Distance(transform.position, target) < 4)
         {
             IterateWaypointIndex();
             UpdateDestination();
@@ -30,6 +30,7 @@ public class Patroller : MonoBehaviour
     {
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
+        //Debug.Log("target is" + target);
     }
 
     void IterateWaypointIndex()
@@ -39,6 +40,7 @@ public class Patroller : MonoBehaviour
         {
             waypointIndex = 0;
         }
+        //Debug.Log("currentwaypoint" + waypointIndex);
     }
 
 }
