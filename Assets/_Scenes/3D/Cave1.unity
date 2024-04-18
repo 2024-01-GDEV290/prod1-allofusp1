@@ -371,6 +371,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3963755497326795004, guid: a3133b42e2a4ba2439108a945de06602,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -767,6 +772,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1172,6 +1182,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2949,6 +2964,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -3977,6 +3997,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 6325754322232857143, guid: 9f813f430208c144bb43fc85c7624c3e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6902230463217565316, guid: 9f813f430208c144bb43fc85c7624c3e,
         type: 3}
       propertyPath: m_Name
@@ -4416,6 +4441,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -4534,6 +4564,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral_reef_green
       objectReference: {fileID: 0}
+    - target: {fileID: 4878301615326598132, guid: 30f6136647323934da793b19ab340e4e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 7436933693378848263, guid: 30f6136647323934da793b19ab340e4e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5845,6 +5880,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 6325754322232857143, guid: 9f813f430208c144bb43fc85c7624c3e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6902230463217565316, guid: 9f813f430208c144bb43fc85c7624c3e,
         type: 3}
       propertyPath: m_Name
@@ -6567,6 +6607,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 4890739575988687825, guid: ac4b2a2f3e8b8ae4ab2dfe394dfb3d91,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6056430934747950157, guid: ac4b2a2f3e8b8ae4ab2dfe394dfb3d91,
         type: 3}
       propertyPath: m_Name
@@ -8043,6 +8088,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 6325754322232857143, guid: 9f813f430208c144bb43fc85c7624c3e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6902230463217565316, guid: 9f813f430208c144bb43fc85c7624c3e,
         type: 3}
       propertyPath: m_Name
@@ -8127,6 +8177,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 5860559276026351243, guid: fb2b110035316ce429a780557ecc56b6,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 7387942504545826987, guid: fb2b110035316ce429a780557ecc56b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9359,6 +9414,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -9737,6 +9797,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 6325754322232857143, guid: 9f813f430208c144bb43fc85c7624c3e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6902230463217565316, guid: 9f813f430208c144bb43fc85c7624c3e,
         type: 3}
       propertyPath: m_Name
@@ -9984,6 +10049,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13025,6 +13095,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3212394036562705101, guid: 2b3f63f4ff886104ea18b9cc4701d223,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13638,6 +13713,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13722,6 +13802,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13946,6 +14031,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16001,6 +16091,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -17629,6 +17724,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -18473,6 +18573,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -19746,6 +19851,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 2333771676381930615, guid: 883a195b94c31cc4a8b42cb22bebac6b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6477506230213405081, guid: 883a195b94c31cc4a8b42cb22bebac6b,
         type: 3}
       propertyPath: m_Name
@@ -20012,6 +20122,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral_reef_green
       objectReference: {fileID: 0}
+    - target: {fileID: 4878301615326598132, guid: 30f6136647323934da793b19ab340e4e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 7436933693378848263, guid: 30f6136647323934da793b19ab340e4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21260,6 +21375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral_reef_yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 3979194331873465879, guid: 4b364e810121b4543ace258a6f022f8c,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6761325205803484485, guid: 4b364e810121b4543ace258a6f022f8c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -23427,6 +23547,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2009644363}
     m_Modifications:
+    - target: {fileID: 1323337776220716282, guid: 01afaa4616384db4a9ba0a93107d563b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 5354558793081585652, guid: 01afaa4616384db4a9ba0a93107d563b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -23815,6 +23940,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 990106323}
     m_Modifications:
+    - target: {fileID: 6325754322232857143, guid: 9f813f430208c144bb43fc85c7624c3e,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 39649252}
     - target: {fileID: 6902230463217565316, guid: 9f813f430208c144bb43fc85c7624c3e,
         type: 3}
       propertyPath: m_Name
