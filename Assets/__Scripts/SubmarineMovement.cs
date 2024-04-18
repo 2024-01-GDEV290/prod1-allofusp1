@@ -10,6 +10,9 @@ public class SubmarineMovement : MonoBehaviour
     float moveLimiter = 0.7f;
     public float moveSpeed = 20f;
 
+    private int subDir = 0;
+    [SerializeField] private Animator submarineAnimations;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -27,6 +30,26 @@ public class SubmarineMovement : MonoBehaviour
 		//Saves the last known position of the sub when it enters a cave, so that when it exits
 		//it will spawn outside the cave.
 		GlobalVars.subPosition = transform.position;
+
+        // Animations test
+        if (horizontal >= 0.2)
+        {
+            subDir = 1;
+        }
+        else if (horizontal < -0.2)
+        {
+            subDir = 3;
+        }
+        else if (vertical >= 0.2)
+        {
+            subDir = 2;
+        }
+        else if (vertical < -0.2)
+        {
+            subDir = 0;
+        }
+
+        submarineAnimations.SetInteger("subDir", subDir);
     }
 
     private void FixedUpdate()
