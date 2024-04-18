@@ -16,7 +16,7 @@ public class BillboardShort : MonoBehaviour
 
     void Start()
     {
-        //mainCamera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     void LateUpdate()

@@ -16,7 +16,7 @@ public class Billbord : MonoBehaviour
 
     void Start()
     {
-        //mainCamera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     void LateUpdate()
