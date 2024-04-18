@@ -9,11 +9,13 @@ public class DialogueManager : MonoBehaviour
     private int index = 0;
     public float typingSpeed = 0.02f; // Speed of typing
     public PlayerMovement fpsController;
+    public bool readOnce;
     
 
     void Start()
     {
         StartCoroutine(TypeSentence());
+        readOnce = false;
     }
 
     void Update()
@@ -62,7 +64,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogueText.text = ""; // Clear the text 
                 index = 0; // Reset index to 0 
-                           
+                readOnce = true;       
                 gameObject.SetActive(false); // Hide the dialogue object
                 fpsController.ToggleMovement(true); // unlock character movement
                 

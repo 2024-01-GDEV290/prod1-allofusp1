@@ -7,11 +7,11 @@ using Cinemachine;
 public class NPCInteraction : MonoBehaviour
 {
     public GameObject dialogueTrigger;
+    public DialogueManager dialogueManager;
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
     public GameObject transitionCamera ;
-    private bool readOnce = false;
    
     
 
@@ -88,8 +88,6 @@ public class NPCInteraction : MonoBehaviour
 
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
-                    
-
                 }
             }
 
@@ -112,21 +110,19 @@ public class NPCInteraction : MonoBehaviour
             }
             if(hit.collider.CompareTag("note"))
             {
-                if (readOnce == false)
-                {
-                    interactionText.SetActive(true);
-                    Debug.Log("Hit: " + hit.collider.name);
-                }
+                interactionText.SetActive(true);
+                Debug.Log("Hit: " + hit.collider.name);
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false);
-                    readOnce = true;
-                    transitionCamera.SetActive(true);
-                    interactionText.SetActive(false);
-
                 }
-
+                if (dialogueManager.readOnce)
+                {
+                    interactionText.SetActive(false);
+                    transitionCamera.SetActive(true);
+                }
             }
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);

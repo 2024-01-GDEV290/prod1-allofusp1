@@ -1320,6 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 1945737125}
+  dialogueManager: {fileID: 0}
   interactionText: {fileID: 1035216554}
   interactionRange: 3
   fpsController: {fileID: 0}
@@ -2487,6 +2488,11 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 367787949}
+    - target: {fileID: 5199059891682230477, guid: 9ae46832e5e191141b3bcd85d650dcab,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1945737127}
     - target: {fileID: 5199059891682230477, guid: 9ae46832e5e191141b3bcd85d650dcab,
         type: 3}
       propertyPath: dialogueTrigger
@@ -3881,6 +3887,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 154109065}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1945737127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 154109065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945737125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae569a5a265f0a4bbb588c4182ae228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1961555497
 PrefabInstance:
   m_ObjectHideFlags: 0
