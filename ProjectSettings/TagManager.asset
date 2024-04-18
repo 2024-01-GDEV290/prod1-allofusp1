@@ -10,6 +10,7 @@ TagManager:
   - paper
   - rock
   - bedroomDoor
+  - note
   layers:
   - Default
   - TransparentFX

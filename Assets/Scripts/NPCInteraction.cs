@@ -7,6 +7,7 @@ using Cinemachine;
 public class NPCInteraction : MonoBehaviour
 {
     public GameObject dialogueTrigger;
+    public DialogueManager dialogueManager;
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
@@ -18,6 +19,7 @@ public class NPCInteraction : MonoBehaviour
     {
         dialogueTrigger.SetActive(false);
         interactionText.SetActive(false);
+        
 
     }
 
@@ -86,8 +88,6 @@ public class NPCInteraction : MonoBehaviour
 
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
-                    
-
                 }
             }
 
@@ -108,6 +108,22 @@ public class NPCInteraction : MonoBehaviour
                 }
 
             }
+            if(hit.collider.CompareTag("note"))
+            {
+                interactionText.SetActive(true);
+                Debug.Log("Hit: " + hit.collider.name);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    dialogueTrigger.SetActive(true);
+                    fpsController.ToggleMovement(false);
+                }
+                if (dialogueManager.readOnce)
+                {
+                    interactionText.SetActive(false);
+                    transitionCamera.SetActive(true);
+                }
+            }
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
@@ -123,6 +139,7 @@ public class NPCInteraction : MonoBehaviour
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("treeScene");
     }
+    
 }
 
 
