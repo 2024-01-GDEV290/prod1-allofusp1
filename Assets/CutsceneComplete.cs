@@ -5,10 +5,17 @@ using UnityEngine;
 public class CutsceneComplete : MonoBehaviour
 {
     [SerializeField] GameEventTrigger nextSceneTrigger;
-    private void OnEnable()
+
+    private void Start()
     {
-        TriggerNextSceneLoad();
+        Invoke(nameof(TriggerNextSceneLoad), 30);
     }
+
+    // TODO:Fix activation track in timeline
+    /*    private void OnEnable()
+        {
+            TriggerNextSceneLoad();
+        }*/
     void TriggerNextSceneLoad()
     {
         nextSceneTrigger.Raise();
