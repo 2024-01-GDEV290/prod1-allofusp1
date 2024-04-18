@@ -9313,6 +9313,11 @@ PrefabInstance:
       propertyPath: timeChangeDelay
       value: 0.34
       objectReference: {fileID: 0}
+    - target: {fileID: 6090234613042263803, guid: cdbee920261a5ad4d9afcfc10101cd04,
+        type: 3}
+      propertyPath: success
+      value: 
+      objectReference: {fileID: 8300000, guid: c906af465b7a5db43ac839010d70a7a6, type: 3}
     - target: {fileID: 9009380304714996687, guid: cdbee920261a5ad4d9afcfc10101cd04,
         type: 3}
       propertyPath: m_LocalPosition.x
