@@ -23,6 +23,7 @@ public class SubmarineMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         transform.rotation = Quaternion.Euler(0, 0, 0);
 		
+        //if Input.GetAxisRaw()
 		//Saves the last known position of the sub when it enters a cave, so that when it exits
 		//it will spawn outside the cave.
 		GlobalVars.subPosition = transform.position;
