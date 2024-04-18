@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f627f72ef0bc36d408d110ea7e75e57d,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneTrigger: {fileID: 11400000, guid: 1f1462932d4a6d34397535a55d6801fe, type: 2}
+  transitionDelay: 30
 --- !u!4 &921899428
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CutsceneComplete : MonoBehaviour
 {
     [SerializeField] GameEventTrigger nextSceneTrigger;
-
+    [SerializeField] float transitionDelay = 1.0f;
     private void Start()
     {
         Invoke(nameof(TriggerNextSceneLoad), 30);
