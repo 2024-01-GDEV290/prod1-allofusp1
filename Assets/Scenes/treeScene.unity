@@ -25897,6 +25897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 0}
+  dialogueManager: {fileID: 0}
   interactionText: {fileID: 0}
   interactionRange: 3
   fpsController: {fileID: 0}
@@ -26691,6 +26692,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1950904099786821025, guid: 79f36e92de699b4468bc738bbd8eb0f5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d694d386638155243ab49813db9cff22, type: 2}
     - target: {fileID: 2273681194385829019, guid: 79f36e92de699b4468bc738bbd8eb0f5,
         type: 3}
       propertyPath: m_LocalPosition.x
