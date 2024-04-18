@@ -136,7 +136,7 @@ public class NPCInteraction : MonoBehaviour
     }
     private IEnumerator LoadTree()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("treeScene");
     }
     

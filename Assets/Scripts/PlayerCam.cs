@@ -10,6 +10,7 @@ public class PlayerCam : MonoBehaviour
 
     float xRotation;
     float yRotation;
+    public bool finalCam = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -27,6 +28,11 @@ public class PlayerCam : MonoBehaviour
         xRotation -= mouseY;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        if(finalCam)
+        {
+            xRotation = Mathf.Clamp(xRotation, -20f, 30f);
+            yRotation = Mathf.Clamp(yRotation, 40f, 100f);
+        }
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
