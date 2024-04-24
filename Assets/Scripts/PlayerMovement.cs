@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         if (grounded)
         {
-            Debug.Log("grounded");
             rb.AddForce(moveDirection.normalized * moveSpeed * 20f, ForceMode.Force);
         }
         else if (!grounded)

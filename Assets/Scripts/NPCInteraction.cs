@@ -11,7 +11,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject interactionText;
     public float interactionRange = 3f; // Interaction range
     public PlayerMovement fpsController;
-    public GameObject transitionCamera ;
+    public GameObject transitionCamera;
    
     
 
@@ -19,8 +19,6 @@ public class NPCInteraction : MonoBehaviour
     {
         dialogueTrigger.SetActive(false);
         interactionText.SetActive(false);
-        
-
     }
 
     void Update()
@@ -89,6 +87,13 @@ public class NPCInteraction : MonoBehaviour
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
                 }
+                if (dialogueManager.readOnce)
+                {
+                    interactionText.SetActive(false);
+                    StartCoroutine(LoadBed());
+
+                    transitionCamera.SetActive(true);
+                }
             }
 
             if (hit.collider.CompareTag("rock"))
@@ -118,14 +123,19 @@ public class NPCInteraction : MonoBehaviour
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false);
                 }
-                if (dialogueManager.readOnce)
-                {
-                    interactionText.SetActive(false);
-                    transitionCamera.SetActive(true);
-                }
+                // (dialogueManager.readOnce)
+                //{
+                //    interactionText.SetActive(false);
+                //    transitionCamera.SetActive(true);
+                //    StartCoroutine(LoadCollection());
+                // }
             }
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
+        }
+        if (dialogueManager.readOnce)
+        {
+            StartCoroutine(LoadCollection());
         }
 
         else
@@ -139,7 +149,17 @@ public class NPCInteraction : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("treeScene");
     }
-    
+    private IEnumerator LoadBed()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("bedroomScene");
+    }
+    private IEnumerator LoadCollection()
+    {
+        yield return new WaitForSeconds(23);
+        SceneManager.LoadScene("collectionScene");
+    }
+
 }
 
 
