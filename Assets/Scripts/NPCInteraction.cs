@@ -109,7 +109,7 @@ public class NPCInteraction : MonoBehaviour
                     SceneManager.LoadScene("collectionScene");
                 }
             }
-            if(hit.collider.CompareTag("note"))
+            if(hit.collider.CompareTag("note") && !dialogueManager.readOnce)
             {
                 interactionText.SetActive(true);
                 //Debug.Log("Hit: " + hit.collider.name);
@@ -151,7 +151,7 @@ public class NPCInteraction : MonoBehaviour
     }
     private IEnumerator LoadCollection()
     {
-        yield return new WaitForSeconds(23);
+        yield return new WaitForSeconds(22);
         SceneManager.LoadScene("collectionScene");
     }
 
