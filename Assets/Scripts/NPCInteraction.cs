@@ -9,7 +9,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject dialogueTrigger;
     public DialogueManager dialogueManager;
     public GameObject interactionText;
-    public float interactionRange = 3f; // Interaction range
+    public float interactionRange = 4f; // Interaction range
     public PlayerMovement fpsController;
     public GameObject transitionCamera;
    

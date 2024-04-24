@@ -14,6 +14,6 @@ public class ReturnScript : MonoBehaviour
     private IEnumerator LoadHeaven()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("AustinScene");
+        SceneManager.LoadScene("heavenScene");
     }
 }
