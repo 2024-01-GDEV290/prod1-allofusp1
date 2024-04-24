@@ -41,14 +41,12 @@ public class NPCInteraction : MonoBehaviour
             if (hit.collider.CompareTag("NPC")) 
             {
                 interactionText.SetActive(true);
-                Debug.Log("Hit: " + hit.collider.name);
+                //Debug.Log("Hit: " + hit.collider.tag);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-
                     dialogueTrigger.SetActive(true);
                     fpsController.ToggleMovement(false); //lock character movement
-
                 }
             }
 
@@ -91,7 +89,6 @@ public class NPCInteraction : MonoBehaviour
                 {
                     interactionText.SetActive(false);
                     StartCoroutine(LoadBed());
-
                     transitionCamera.SetActive(true);
                 }
             }
@@ -111,12 +108,11 @@ public class NPCInteraction : MonoBehaviour
                 {
                     SceneManager.LoadScene("collectionScene");
                 }
-
             }
             if(hit.collider.CompareTag("note"))
             {
                 interactionText.SetActive(true);
-                Debug.Log("Hit: " + hit.collider.name);
+                //Debug.Log("Hit: " + hit.collider.name);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -133,14 +129,13 @@ public class NPCInteraction : MonoBehaviour
 
             Debug.DrawRay(transform.position, transform.forward * interactionRange, Color.red);
         }
-        if (dialogueManager.readOnce)
-        {
-            StartCoroutine(LoadCollection());
-        }
-
         else
         {
             interactionText.SetActive(false);
+        }
+        if (dialogueManager.readOnce)
+        {
+            StartCoroutine(LoadCollection());
         }
 
     }
