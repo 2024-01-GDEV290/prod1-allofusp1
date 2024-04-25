@@ -15,6 +15,7 @@ public class heavenQuest : MonoBehaviour
     void Start()
     {
         questTextCanvasGroup = questText.GetComponent<CanvasGroup>();
+        Debug.Log(questTextCanvasGroup);
         if (questTextCanvasGroup != null)
         {
             questTextCanvasGroup.alpha = 0; // Make sure text is invisible at start
