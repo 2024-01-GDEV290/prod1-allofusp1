@@ -6711,18 +6711,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4422287489416311617}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1762488636 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4422287489416311617}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762488634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae569a5a265f0a4bbb588c4182ae228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846793588
 GameObject:
   m_ObjectHideFlags: 0
@@ -11943,7 +11931,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 1762488636}
+      objectReference: {fileID: 0}
     - target: {fileID: 5199059891682230477, guid: 9ae46832e5e191141b3bcd85d650dcab,
         type: 3}
       propertyPath: dialogueTrigger
