@@ -10,10 +10,10 @@ public class collectionScript : MonoBehaviour
     private int collectedItemCount = 0;
     public int totalItemsToCollect = 5;
 
-    // Audio components for multiple sounds
-    public AudioClip[] collectSounds;  // Array of sound clips
+    
+    public AudioClip[] collectSounds;  
     private AudioSource audioSource;
-    private int soundIndex = 0;  // Index to track which sound to play next
+    private int soundIndex = 0;  
 
     private void Awake()
     {
@@ -27,9 +27,9 @@ public class collectionScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Setup the AudioSource component
+        
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)  // Add AudioSource if it's not already attached
+        if (audioSource == null)  
         {
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
@@ -41,12 +41,12 @@ public class collectionScript : MonoBehaviour
         collectedItemCount++;
         Debug.Log("Collected Items: " + collectedItemCount);
 
-        // Play the next sound in the array
+        
         if (collectSounds.Length > 0)
         {
             audioSource.clip = collectSounds[soundIndex];
             audioSource.Play();
-            soundIndex = (soundIndex + 1) % collectSounds.Length;  // Increment and wrap the index
+            soundIndex = (soundIndex + 1) % collectSounds.Length;  
         }
 
         if (collectedItemCount >= totalItemsToCollect)

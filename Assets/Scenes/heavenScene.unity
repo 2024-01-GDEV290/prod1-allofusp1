@@ -12431,6 +12431,21 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 446508780}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: Seeking what we lost in our memories.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: Can you help me retrieve what I have lost?
+      objectReference: {fileID: 0}
     - target: {fileID: 6848839262771364719, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: m_Name

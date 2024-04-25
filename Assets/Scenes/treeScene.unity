@@ -151,7 +151,22 @@ PrefabInstance:
     - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Fix this set of things
+      value: Going against her father's wishes, the two fell in love
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: They met on the hill for every sunset.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: Things were going well....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
+        type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: Until...
       objectReference: {fileID: 0}
     - target: {fileID: 4558797171765309006, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}

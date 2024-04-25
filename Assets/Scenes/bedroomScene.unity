@@ -1148,12 +1148,12 @@ PrefabInstance:
     - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: sentences.Array.data[0]
-      value: hello
+      value: 'The King forbid the two to meet again.  '
       objectReference: {fileID: 0}
     - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
       propertyPath: sentences.Array.data[1]
-      value: this is a sentence
+      value: Filled with rage, the Lutenist did something he would regret...
       objectReference: {fileID: 0}
     - target: {fileID: 4462222295250242867, guid: 8365768c0decc274e8a024b55e15e3e1,
         type: 3}
