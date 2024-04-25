@@ -14,11 +14,11 @@ public class Map1Pickup : MonoBehaviour
 		if (MapCount.map1Collected == true)
 		{
 			MapCount.CheckMapCount();
-			mapDisplay.text = "Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
+			mapDisplay.text = MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
 
 			if (MapCount.mapsCollected >= MapCount.mapsNeeded)
 			{
-				returnToSubDisplay.text = "> Map fragments collected. Return to surface";
+				returnToSubDisplay.text = "Map fragments collected. Return to surface";
 			}
 			
 			Destroy(gameObject);
@@ -31,7 +31,7 @@ public class Map1Pickup : MonoBehaviour
 		MapCount.map1Collected = true;
 
 		MapCount.CheckMapCount();
-		mapDisplay.text = "Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
+		mapDisplay.text = MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
 		
 		if (MapCount.mapsCollected >= MapCount.mapsNeeded)
 		{
