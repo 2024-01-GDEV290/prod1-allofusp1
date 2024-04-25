@@ -28,6 +28,11 @@ public class PlayerCam : MonoBehaviour
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        if (mouseX == 90f)
+        {
+            Debug.Log(mouseX + " " + mouseY);
+        }
+
 
         yRotation += mouseX;
         xRotation -= mouseY;
@@ -43,9 +48,4 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
     }
-    private IEnumerator StartingSet()
-    {
-        yield return new WaitForSeconds(3); 
-    }
-
 }
