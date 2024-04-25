@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -888,39 +888,39 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wyatt Almer - 2D Pixel Artist, Playtesting
+  m_text: 'Wyatt Almer - 2D Pixel Artist, Playtesting, Moral suport
 
 
 
 
 
 
-    Xavier Chico-Murillo
-    - Concept Artist, Creature/Fauna Artist, Other 2D Elements
+    Xavier
+    Chico-Murillo - Concept Artist, Creature/Fauna Artist, Other 2D Elements, Playtesting
 
 
 
 
 
 
-    Kevin Federici
-    - Programming and creature movement AI
+    Kevin
+    Federici - Programming and creature movement AI
 
 
 
 
 
 
-    Jake Kymer - 2D and 3D Level
-    Designer, Lighting
+    Jake Kymer - 2D and
+    3D Level Designer, Lighting, Director, Playtesting, Programing
 
 
 
 
 
 
-    Caleb Maggio - 3D Artist, Programmer, 3D Level Designer,
-    Music'
+    Caleb
+    Maggio - 3D Artist, Programmer, 3D Level Designer, Music'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 092d2b1b63eb94e47a2ee7e17749e9a3, type: 2}
   m_sharedMaterial: {fileID: -1771015504494430953, guid: 092d2b1b63eb94e47a2ee7e17749e9a3,
