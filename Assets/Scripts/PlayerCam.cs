@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PlayerCam : MonoBehaviour
 {
     public float sensX;
@@ -10,12 +12,15 @@ public class PlayerCam : MonoBehaviour
 
     float xRotation;
     float yRotation;
+    [SerializeField] float bottomClamp =-90f;
+    [SerializeField] float topClamp = 90f;
     public bool finalCam = false;
     // Start is called before the first frame update
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     // Update is called once per frame
@@ -27,7 +32,7 @@ public class PlayerCam : MonoBehaviour
         yRotation += mouseX;
         xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, bottomClamp, topClamp);
         if(finalCam)
         {
             xRotation = Mathf.Clamp(xRotation, -20f, 30f);
@@ -38,4 +43,9 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
     }
+    private IEnumerator StartingSet()
+    {
+        yield return new WaitForSeconds(3); 
+    }
+
 }
