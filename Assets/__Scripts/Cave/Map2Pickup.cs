@@ -14,11 +14,11 @@ public class Map2Pickup : MonoBehaviour
 		if (MapCount.map2Collected == true)
 		{
 			MapCount.CheckMapCount();
-			mapDisplay.text = "> Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
+			mapDisplay.text = "Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
 
 			if (MapCount.mapsCollected >= MapCount.mapsNeeded)
 			{
-				returnToSubDisplay.text = "> Map fragments collected. Return to sub";
+				returnToSubDisplay.text = "> Map fragments collected. Return to surface";
 			}
 			
 			Destroy(gameObject);
@@ -31,11 +31,11 @@ public class Map2Pickup : MonoBehaviour
 		MapCount.map2Collected = true;
 
 		MapCount.CheckMapCount();
-		mapDisplay.text = "> Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
+		mapDisplay.text = "Map fragments collected: " + MapCount.mapsCollected + "/" + MapCount.mapsNeeded;
 		
 		if (MapCount.mapsCollected >= MapCount.mapsNeeded)
 		{
-			returnToSubDisplay.text = "> Map fragments collected. Return to sub";
+			returnToSubDisplay.text = "Map fragments collected. Return to surface";
 		}
 		
 		Destroy(gameObject);

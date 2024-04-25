@@ -17,6 +17,7 @@ public class MapControls : MonoBehaviour
 	[SerializeField] private GameObject mapDisplay;
 	private bool mapDisplayActive = false;
 	[SerializeField] private GameObject foundMapDisplay;
+	[SerializeField] private TMP_Text noDataDisplay;
 	
 	void Start()
 	{
@@ -37,6 +38,7 @@ public class MapControls : MonoBehaviour
 			FoggySideCollider.enabled = false;
 			objectiveDisplay.text = "Now that I've reassembled this map, I should be able to find their last location. Better head out!";
 			foundMapDisplay.SetActive(true);
+			noDataDisplay.text = "";
 		}
 		
 		if (GlobalVars.hasLog == true)

@@ -33,7 +33,7 @@ public class Flashlight : MonoBehaviour
 	private void FlashlightCollected()
 	{
 		swimmerLight.intensity = 125;
-		consoleDisplay.text = "[SUB -> DIVER] Light source acquired. Return to submersible for further directions";
+		consoleDisplay.text = "[SUB -> DIVER] Light source acquired. Return to surface for further directions";
 		mesh.enabled = false;
 	}
 }

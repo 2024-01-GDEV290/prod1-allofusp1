@@ -12,7 +12,7 @@ public class BookPickup : MonoBehaviour
 		
 		GlobalVars.hasLog = true;
 	
-		LogDisplay.text = "> Ship's log recovered - return to submersible for deciphering";
+		LogDisplay.text = "[SUB > DIVER] Ship's log recovered - return to surface for deciphering";
 	
 		Destroy(gameObject);
 	}
