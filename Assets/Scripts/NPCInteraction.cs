@@ -7,7 +7,7 @@ using Cinemachine;
 public class NPCInteraction : MonoBehaviour
 {
     public GameObject dialogueTrigger;
-    public DialogueManager dialogueManager;
+    public DialogueManager dialogueManager = null;
     public GameObject interactionText;
     public float interactionRange = 4f; // Interaction range
     public PlayerMovement fpsController;
