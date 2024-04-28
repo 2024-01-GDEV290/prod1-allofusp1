@@ -30,7 +30,7 @@ public class MapControls : MonoBehaviour
 		if (GlobalVars.hasFlashlight == true)
 		{
 			DarkSideCollider.enabled = false;
-			objectiveDisplay.text = ("Now that I have a light source, I should be able to explore the hidden area for the ship's logs. Maybe they will help point me in the ship's direction...");
+			objectiveDisplay.text = ("Now that I have a light source, I should be able to explore the dark area for the ship's logs. Maybe they will help point me in the ship's direction...");
 		}
 		
 		if (GlobalVars.hasMap == true)

@@ -6,6 +6,7 @@ using TMPro;
 public class BookPickup : MonoBehaviour
 {
 	[SerializeField] public TMP_Text LogDisplay;
+	[SerializeField] private AudioSource CollectSound;
 	
     private void OnTriggerEnter(Collider swimmer)
 	{
@@ -14,6 +15,7 @@ public class BookPickup : MonoBehaviour
 	
 		LogDisplay.text = "[SUB > DIVER] Ship's log recovered - return to surface for deciphering";
 	
+		CollectSound.Play();
 		Destroy(gameObject);
 	}
 }

@@ -8,6 +8,9 @@ public class Flashlight : MonoBehaviour
 	[SerializeField] private GameObject swimmer; 
 	[SerializeField] private Light swimmerLight;
 	[SerializeField] private TMP_Text consoleDisplay;
+	
+	[SerializeField] private AudioSource CollectSound;
+	
 	private MeshRenderer mesh;
 	
 	void Start()
@@ -34,6 +37,9 @@ public class Flashlight : MonoBehaviour
 	{
 		swimmerLight.intensity = 125;
 		consoleDisplay.text = "[SUB -> DIVER] Light source acquired. Return to surface for further directions";
-		mesh.enabled = false;
+		
+		CollectSound.Play();
+		
+		Destroy(gameObject);
 	}
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/_Scenes/Start.unity
+    guid: 5860a598aba582e469ea1529eaafc560
+  - enabled: 1
     path: Assets/_Scenes/2D submarine.unity
     guid: f78444fafa991e84ab08350e57c57364
   - enabled: 0

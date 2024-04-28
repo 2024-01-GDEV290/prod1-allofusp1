@@ -9,6 +9,8 @@ public class Map2Pickup : MonoBehaviour
 	[SerializeField] public TMP_Text mapDisplay;
 	[SerializeField] public TMP_Text returnToSubDisplay;
 	
+	[SerializeField] private AudioSource CollectSound;
+	
 	void Start()
 	{
 		if (MapCount.map2Collected == true)
@@ -38,6 +40,7 @@ public class Map2Pickup : MonoBehaviour
 			returnToSubDisplay.text = "Map fragments collected. Return to surface";
 		}
 		
+		CollectSound.Play();
 		Destroy(gameObject);
 	}
 }
