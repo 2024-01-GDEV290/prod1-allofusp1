@@ -80,5 +80,5 @@ public class Swimmer : MonoBehaviour
 		//	Debug.Log("step:" + i + " time is" + Time.time);
 		//	yield return new WaitForSeconds(1);
 		//}
-	}
+	
 }
